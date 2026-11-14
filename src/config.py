@@ -25,5 +25,5 @@ def load_settings(env_path: Path | None = None) -> Settings:
         day6_strategy=(os.getenv("DAY6_STRATEGY") or "B").strip(),
         openai_api_key=(os.getenv("OPENAI_API_KEY") or "").strip(),
         embedding_model=(os.getenv("EMBEDDING_MODEL") or "text-embedding-3-small").strip(),
-        agent_model=(os.getenv("AGENT_MODEL") or "gpt-4o-mini").strip(),
+        agent_model=(os.getenv("AGENT_MODEL") or "gpt-6-luna").strip(),
     )

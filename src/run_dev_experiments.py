@@ -15,7 +15,7 @@ DEV_EXPERIMENTS: list[tuple[str, str, AgentConfig]] = [
         "cfg0_baseline_dense_800",
         "Baseline matching starter defaults: dense pgvector only, max_searches=2, top_k=3, budget=800, first_come, no agent-inferred filter.",
         AgentConfig(
-            model="gpt-4o-mini",
+            model="gpt-6-luna",
             default_mode="dense",
             max_searches=2,
             top_k=3,
@@ -28,7 +28,7 @@ DEV_EXPERIMENTS: list[tuple[str, str, AgentConfig]] = [
         "cfg1_hybrid_2500_ranked",
         "Improvement 1: Hybrid RRF (dense+BM25), max_searches=3, top_k=3, budget=2500, score_ranked context, agent filter allowed.",
         AgentConfig(
-            model="gpt-4o-mini",
+            model="gpt-6-luna",
             default_mode="hybrid",
             max_searches=3,
             top_k=3,
@@ -41,7 +41,7 @@ DEV_EXPERIMENTS: list[tuple[str, str, AgentConfig]] = [
         "cfg2_hybrid_4000_k5",
         "Improvement 2: Wider recall & budget: Hybrid RRF, max_searches=4, top_k=5, budget=4000, score_ranked context, agent filter allowed.",
         AgentConfig(
-            model="gpt-4o-mini",
+            model="gpt-6-luna",
             default_mode="hybrid",
             max_searches=4,
             top_k=5,
@@ -54,7 +54,7 @@ DEV_EXPERIMENTS: list[tuple[str, str, AgentConfig]] = [
         "cfg4_hybrid_4000_k5_followup",
         "Improvement 3 (Selected): Same Hybrid RRF + k=5 + budget=4000 + citation self-correction + follow-up search prompt guidance.",
         AgentConfig(
-            model="gpt-4o-mini",
+            model="gpt-6-luna",
             default_mode="hybrid",
             max_searches=4,
             top_k=5,

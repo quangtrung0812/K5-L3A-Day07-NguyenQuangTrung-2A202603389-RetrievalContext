@@ -21,6 +21,9 @@ from .retrievers import (
 
 # Pricing per 1M tokens (USD) for supported OpenAI chat models
 CHAT_MODEL_PRICING_PER_1M: dict[str, tuple[float, float]] = {
+    "gpt-6-luna": (0.10, 0.50),
+    "gpt-6-sol": (2.00, 10.00),
+    "gpt-6-astra": (10.00, 50.00),
     "gpt-4o-mini": (0.15, 0.60),
     "gpt-4o": (2.50, 10.00),
     "gpt-4.1-mini": (0.40, 1.60),
@@ -149,6 +152,8 @@ class OpenAIChatClient:
         }
         if tools is not None:
             payload_dict["tools"] = tools
+            if model.startswith(("gpt-6", "gpt-5")):
+                payload_dict["reasoning_effort"] = "none"
         if tool_choice is not None:
             payload_dict["tool_choice"] = tool_choice
         payload = json.dumps(payload_dict).encode("utf-8")
@@ -212,7 +217,7 @@ class OpenAIChatClient:
 
 @dataclass
 class AgentConfig:
-    model: str = "gpt-4o-mini"
+    model: str = "gpt-6-luna"
     default_mode: str = "hybrid"
     max_searches: int = 3
     top_k: int = 3
