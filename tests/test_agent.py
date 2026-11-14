@@ -143,6 +143,15 @@ class AgenticRagTests(unittest.TestCase):
                         )
                     ]
                 ),
+                _make_response(
+                    [
+                        _make_tool_call(
+                            "c3",
+                            "submit_answer",
+                            {"answer": "Still wrong [missing:id].", "citations": ["missing:id"]},
+                        )
+                    ]
+                ),
             ]
         )
         retriever = _FakeRetriever([[CHUNKS[0]]])
@@ -154,6 +163,40 @@ class AgenticRagTests(unittest.TestCase):
         )
         self.assertEqual(res["status"], "abstain")
         self.assertEqual(res["events"][-1]["event"], "invalid_or_missing_citations")
+
+    def test_citation_self_correction_succeeds(self):
+        client = _FakeOpenAIClient(
+            [
+                _make_response([_make_tool_call("c1", "search_documents", {"query": "AI"})]),
+                _make_response(
+                    [
+                        _make_tool_call(
+                            "c2",
+                            "submit_answer",
+                            {"answer": "Claim without inline tag.", "citations": ["doc:p1:c1"]},
+                        )
+                    ]
+                ),
+                _make_response(
+                    [
+                        _make_tool_call(
+                            "c3",
+                            "submit_answer",
+                            {"answer": "Claim with tag [doc:p1:c1].", "citations": ["doc:p1:c1"]},
+                        )
+                    ]
+                ),
+            ]
+        )
+        retriever = _FakeRetriever([[CHUNKS[0]]])
+        res = run_agentic_rag(
+            "What is AI?",
+            client=client,
+            retriever=retriever,
+            config=AgentConfig(),
+        )
+        self.assertEqual(res["status"], "answered")
+        self.assertEqual(res["citations"], ["doc:p1:c1"])
 
     def test_select_context_score_ranked_prefers_higher_score(self):
         ctx, ids, _ = select_context(CHUNKS, budget=160, mode="score_ranked")
