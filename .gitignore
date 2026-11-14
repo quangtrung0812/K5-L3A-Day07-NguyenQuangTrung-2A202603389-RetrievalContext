@@ -23,3 +23,6 @@ Thumbs.db
 # Local datasets and generated output; share permitted artifacts deliberately
 starter/data/
 starter/results/
+data/advanced/raw/
+data/advanced/index/pages/
+data/advanced/index/crops/

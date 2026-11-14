@@ -1,0 +1,123 @@
+{
+  "config": {
+    "name": "cfg0_text_only_baseline",
+    "model": "gpt-6-luna",
+    "default_mode": "hybrid",
+    "text_only": true,
+    "enable_live_vision": false,
+    "max_searches": 4,
+    "max_inspects": 0,
+    "top_k": 5,
+    "context_budget": 6000,
+    "temperature": 0.0
+  },
+  "overall": {
+    "passed": 14,
+    "total": 18,
+    "score_str": "14/18",
+    "accuracy_pct": 77.78
+  },
+  "by_category": {
+    "Bảng": {
+      "passed": 2,
+      "total": 3,
+      "score_str": "2/3",
+      "accuracy_pct": 66.67
+    },
+    "Ảnh, sơ đồ": {
+      "passed": 2,
+      "total": 3,
+      "score_str": "2/3",
+      "accuracy_pct": 66.67
+    },
+    "Biểu đồ": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Multi-hop": {
+      "passed": 2,
+      "total": 3,
+      "score_str": "2/3",
+      "accuracy_pct": 66.67
+    },
+    "Text": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Thiếu bằng chứng": {
+      "passed": 2,
+      "total": 3,
+      "score_str": "2/3",
+      "accuracy_pct": 66.67
+    }
+  },
+  "telemetry": {
+    "total_cost_usd": 0.018107,
+    "avg_cost_per_query_usd": 0.001006,
+    "avg_latency_ms": 6373.48,
+    "p95_latency_ms": 11245.0,
+    "total_llm_prompt_tokens": 158306,
+    "total_llm_completion_tokens": 4534,
+    "total_embedding_tokens": 490,
+    "total_inspect_calls": 0
+  },
+  "failed_cases": [
+    {
+      "id": "dev-tbl-01",
+      "category": "Bảng",
+      "question": "Theo Table C.2 (Executive Opinion Survey) trong WEF Global Risks Report 2024, 5 rủi ro hàng đầu của Australia theo đúng thứ tự từ 1 đến 5 là gì?",
+      "status": "abstain",
+      "citations": [],
+      "inspected_pages": [],
+      "gold_answer": "1st: Economic downturn; 2nd: Inflation; 3rd: Household debt; 4th: Energy supply shortage; 5th: Extreme weather events.",
+      "agent_answer": "Insufficient evidence in the provided report: Hai lượt tìm kiếm khác nhau trong Table C.2 không trả về mục Australia, nên chưa có bằng chứng đủ để xác định chính xác thứ hạng 1–5. Theo yêu cầu, không suy đoán từ các mục khác.",
+      "failure_reason": "Abstained: text-only search missed Australia card in Table C.2 p.103."
+    },
+    {
+      "id": "dev-vis-01",
+      "category": "Ảnh, sơ đồ",
+      "question": "Trong sơ đồ 4 lực cấu trúc Box 2.1 (Structural forces), bốn lực cấu trúc là gì và hai lực nào nằm ở cột bên phải của sơ đồ ma trận 2x2?",
+      "status": "answered",
+      "citations": [
+        "wef-grr-2024:p040:text:02",
+        "wef-grr-2024:p040:text:01"
+      ],
+      "inspected_pages": [],
+      "gold_answer": "Bốn lực cấu trúc là Technological acceleration, Climate change, Geostrategic shifts và Demographic bifurcation. Cột bên phải gồm Climate change (trên) và Demographic bifurcation (dưới).",
+      "agent_answer": "Bốn lực cấu trúc là **tăng tốc công nghệ (technological acceleration), dịch chuyển địa chiến lược (geostrategic shifts), biến đổi khí hậu (climate change), và phân hóa nhân khẩu học (demographic bifurcation)**. [wef-grr-2024:p040:text:02] Trong sơ đồ ma trận 2×2 ở Box 2.1, cột bên phải gồm **dịch chuyển địa chiến lược** (ô trên) và **phân hóa nhân khẩu học** (ô dưới). [wef-grr-2024:p040:text:01]",
+      "failure_reason": "Wrong right column in Box 2.1 p.40: answered Geostrategic shifts instead of Climate change."
+    },
+    {
+      "id": "dev-mh-01",
+      "category": "Multi-hop",
+      "question": "Kết hợp Table B.1 (Survey sample composition) và Figure 1.5 (Severity by stakeholder over the short term), nhóm tổ chức nào chiếm tỷ trọng lớn nhất trong mẫu khảo sát GRPS (tỷ lệ % và cỡ mẫu n) và hai rủi ro đứng hạng 1 và hạng 2 trong khung ngắn hạn 2 năm của nhóm đó là gì?",
+      "status": "answered",
+      "citations": [
+        "wef-grr-2024:p101:text:01",
+        "wef-grr-2024:p015:text:04",
+        "wef-grr-2024:p015:text:03"
+      ],
+      "inspected_pages": [],
+      "gold_answer": "Nhóm tổ chức lớn nhất là Private sector (48%, cỡ mẫu n=715). Hai rủi ro đứng đầu 2 năm của Private sector trong Figure 1.5 là 1st Misinformation and disinformation và 2nd Extreme weather events.",
+      "agent_answer": "Nhóm chiếm tỷ trọng lớn nhất là **khu vực tư nhân (Private sector)**: **48%**, khoảng **n=715** người trả lời. [wef-grr-2024:p101:text:01] [wef-grr-2024:p015:text:04]\n\nTrong Figure 1.5, với nhóm này, hai rủi ro đứng đầu trong khung ngắn hạn 2 năm là **(1) Lạm phát (Inflation)** và **(2) Thiếu cơ hội kinh tế (Lack of economic opportunity)**. [wef-grr-2024:p015:text:03]",
+      "failure_reason": "Wrong Figure 1.5 p.15 ranks for Private sector: answered Inflation & Lack of economic opportunity instead of 1st Misinformation & 2nd Extreme weather."
+    },
+    {
+      "id": "dev-una-01",
+      "category": "Thiếu bằng chứng",
+      "question": "Theo WEF Global Risks Report 2024, bảng xếp hạng Global Risks Report 2025 đặt rủi ro nào ở vị trí số 1 cho năm 2025?",
+      "status": "answered",
+      "citations": [
+        "wef-grr-2024:p012:text:01"
+      ],
+      "inspected_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (WEF Global Risks Report 2024 chỉ công bố kết quả khảo sát 2023-2024, không chứa bảng xếp hạng của Global Risks Report 2025).",
+      "agent_answer": "Theo bảng xếp hạng trong WEF Global Risks Report 2024, rủi ro đứng số 1 cho năm 2025 là **Misinformation and disinformation (Thông tin sai lệch và thông tin xuyên tạc)**. [wef-grr-2024:p012:text:01]",
+      "failure_reason": "Hallucinated 2025 rank 1 using 2024 data instead of abstaining."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "config": {
+    "name": "cfg2_multimodal_live_vision",
+    "model": "gpt-6-luna",
+    "default_mode": "hybrid",
+    "text_only": false,
+    "enable_live_vision": true,
+    "max_searches": 6,
+    "max_inspects": 4,
+    "top_k": 6,
+    "context_budget": 9000,
+    "temperature": 0.0
+  },
+  "overall": {
+    "passed": 28,
+    "total": 30,
+    "score_str": "28/30",
+    "accuracy_pct": 93.33
+  },
+  "by_category": {
+    "Bảng": {
+      "passed": 6,
+      "total": 6,
+      "score_str": "6/6",
+      "accuracy_pct": 100.0
+    },
+    "Ảnh, sơ đồ": {
+      "passed": 5,
+      "total": 5,
+      "score_str": "5/5",
+      "accuracy_pct": 100.0
+    },
+    "Biểu đồ": {
+      "passed": 5,
+      "total": 5,
+      "score_str": "5/5",
+      "accuracy_pct": 100.0
+    },
+    "Multi-hop": {
+      "passed": 3,
+      "total": 4,
+      "score_str": "3/4",
+      "accuracy_pct": 75.0
+    },
+    "Text": {
+      "passed": 3,
+      "total": 4,
+      "score_str": "3/4",
+      "accuracy_pct": 75.0
+    },
+    "Thiếu bằng chứng": {
+      "passed": 6,
+      "total": 6,
+      "score_str": "6/6",
+      "accuracy_pct": 100.0
+    }
+  },
+  "telemetry": {
+    "total_cost_usd": 0.041576,
+    "avg_cost_per_query_usd": 0.001386,
+    "avg_latency_ms": 5658.49,
+    "p95_latency_ms": 9185.61,
+    "total_llm_prompt_tokens": 383956,
+    "total_llm_completion_tokens": 6334,
+    "total_embedding_tokens": 651,
+    "total_inspect_calls": 28
+  },
+  "failed_cases": [
+    {
+      "id": "test-mh-03",
+      "category": "Multi-hop",
+      "question": "Kết hợp Box 2.2 (Collapse of the AMOC) và bản đồ Figure 2.5 (Examples of global and regional tipping points): theo Box 2.2, ngưỡng nhiệt độ nào khiến sự sụp đổ của AMOC được đánh giá là 'possible' và ngưỡng nào là 'likely', đồng thời trên bản đồ Figure 2.5, AMOC nằm trong nhóm phân loại màu gì (Category) và hai điểm bùng phát lân cận phía bắc/tây bắc của AMOC cũng ghi nhãn 'Collapse' là gì?",
+      "status": "answered",
+      "citations": [
+        "wef-grr-2024:p044:image",
+        "wef-grr-2024:p043:image"
+      ],
+      "inspected_pages": [
+        43,
+        44
+      ],
+      "gold_answer": "Theo Box 2.2, điểm bùng phát của AMOC được đánh giá là 'possible' ở 1.4°C và 'likely' ở 4.0°C. Trên bản đồ Figure 2.5, AMOC thuộc nhóm màu xanh dương nhạt 'Circulation patterns', và hai điểm ghi nhãn 'Collapse' ngay phía bắc/tây bắc của AMOC là 'Labrador sea/subpolar gyre' và 'Greenland ice sheet'.",
+      "agent_answer": "Theo Box 2.2, ngưỡng tipping point của AMOC được đánh giá là “possible” ở 1.4°C và “likely” ở 4.0°C [wef-grr-2024:p044:image]. Trên Figure 2.5, AMOC thuộc Category “Circulation patterns” (màu xanh nhạt/xanh lam nhạt trong chú giải) [wef-grr-2024:p043:image]. Hai điểm bùng phát lân cận phía bắc/tây bắc AMOC có nhãn “Collapse” là Labrador sea/subpolar gyre và Boreal permafrost [wef-grr-2024:p043:image].",
+      "failure_reason": "Box 2.2 thresholds (1.4C/4.0C) and Category (Circulation patterns) were exact, but on Figure 2.5 p.43 misidentified the second nearby NW 'Collapse' point as 'Boreal permafrost' (the NW Boreal permafrost box says 'Abrupt thaw', whereas NE Boreal permafrost 'Collapse' is far east in Siberia; the two NW/N points labeled 'Collapse' near AMOC are Labrador sea/subpolar gyre and Greenland ice sheet)."
+    },
+    {
+      "id": "test-txt-03",
+      "category": "Text",
+      "question": "Theo mục 'High-stakes hotspots' trong báo cáo, ba điểm nóng địa chính trị cụ thể nào sẽ thu hút sự chú ý và nguồn lực trong hai năm tới?",
+      "status": "answered",
+      "citations": [
+        "wef-grr-2024:p010:text:02"
+      ],
+      "inspected_pages": [],
+      "gold_answer": "Ba điểm nóng cụ thể là: chiến tranh tại Ukraine (the war in Ukraine), xung đột Israel-Gaza (the Israel-Gaza conflict) và căng thẳng quanh Đài Loan (tensions over Taiwan).",
+      "agent_answer": "Ba điểm nóng địa chính trị được nêu là **chiến tranh Nga–Ukraine, xung đột Trung Đông và căng thẳng quanh Đài Loan**. [wef-grr-2024:p010:text:02]",
+      "failure_reason": "Answered using Chapter 1 overview p.10 ('the Middle East conflict') without inspecting the dedicated 'High-stakes hotspots' section on p.23 (ranked #6 in retrieval), which specifies 'the Israel-Gaza conflict'."
+    }
+  ]
+}

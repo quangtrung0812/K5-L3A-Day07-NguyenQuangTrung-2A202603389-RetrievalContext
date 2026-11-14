@@ -1,0 +1,24 @@
+{
+  "config_name": "cfg1_multimodal_no_live_vision",
+  "split": "dev",
+  "reviews": [
+    {"id": "dev-tbl-01", "verdict": "fail", "notes": "Wrong Australia top 5 read from garbled table text extraction p103:table:01 (listed Extreme weather 2nd instead of Inflation)."},
+    {"id": "dev-tbl-02", "verdict": "fail", "notes": "False abstention: missed tie explanation text."},
+    {"id": "dev-tbl-03", "verdict": "fail", "notes": "False abstention: failed to retrieve Table A.1 definition."},
+    {"id": "dev-vis-01", "verdict": "pass", "notes": "Correct from visual index summary p.40."},
+    {"id": "dev-vis-02", "verdict": "pass", "notes": "Correct from visual index summary p.47."},
+    {"id": "dev-vis-03", "verdict": "pass", "notes": "Correct from visual/text chunk p.43."},
+    {"id": "dev-cht-01", "verdict": "pass", "notes": "Correct: 66%, 53%, 46% on p.13."},
+    {"id": "dev-cht-02", "verdict": "fail", "notes": "Wrong 2nd risk on Figure 3.2 p.88: answered Adverse outcomes of AI technologies instead of Adverse outcomes of frontier technologies."},
+    {"id": "dev-cht-03", "verdict": "fail", "notes": "Missed exact annotated range US$194 to US$366 billion/year on p.46; reported only computed 387-21=366."},
+    {"id": "dev-mh-01", "verdict": "fail", "notes": "False abstention: missed Figure 1.5 p.15."},
+    {"id": "dev-mh-02", "verdict": "pass", "notes": "Correct: 2nd 10y, 5.9/7, 4 systems at 1.5C on p.42."},
+    {"id": "dev-mh-03", "verdict": "pass", "notes": "Correct: Cyber insecurity & Tech power concentration on p.51 + Nvidia 95% on p.52."},
+    {"id": "dev-txt-01", "verdict": "pass", "notes": "Correct: ~1500 experts, Sept-Oct 2023."},
+    {"id": "dev-txt-02", "verdict": "pass", "notes": "Correct: nearly 521,000 homes on p.45."},
+    {"id": "dev-txt-03", "verdict": "pass", "notes": "Correct: $6.4B + $1.2B TX & LA on p.48."},
+    {"id": "dev-una-01", "verdict": "fail", "notes": "Hallucinated 2025 rank 1 using 2024 data instead of abstaining."},
+    {"id": "dev-una-02", "verdict": "pass", "notes": "Correctly abstained."},
+    {"id": "dev-una-03", "verdict": "pass", "notes": "Correctly abstained."}
+  ]
+}

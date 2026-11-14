@@ -1,0 +1,69 @@
+{
+  "config": {
+    "name": "cfg2_multimodal_live_vision",
+    "model": "gpt-6-luna",
+    "default_mode": "hybrid",
+    "text_only": false,
+    "enable_live_vision": true,
+    "max_searches": 6,
+    "max_inspects": 4,
+    "top_k": 6,
+    "context_budget": 9000,
+    "temperature": 0.0
+  },
+  "overall": {
+    "passed": 18,
+    "total": 18,
+    "score_str": "18/18",
+    "accuracy_pct": 100.0
+  },
+  "by_category": {
+    "Bảng": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Ảnh, sơ đồ": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Biểu đồ": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Multi-hop": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Text": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    },
+    "Thiếu bằng chứng": {
+      "passed": 3,
+      "total": 3,
+      "score_str": "3/3",
+      "accuracy_pct": 100.0
+    }
+  },
+  "telemetry": {
+    "total_cost_usd": 0.020911,
+    "avg_cost_per_query_usd": 0.001162,
+    "avg_latency_ms": 5481.22,
+    "p95_latency_ms": 8358.42,
+    "total_llm_prompt_tokens": 189856,
+    "total_llm_completion_tokens": 3834,
+    "total_embedding_tokens": 400,
+    "total_inspect_calls": 15
+  },
+  "failed_cases": []
+}

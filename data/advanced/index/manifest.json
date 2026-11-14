@@ -1,0 +1,151 @@
+{
+  "source": {
+    "title": "The Global Risks Report 2024 (19th Edition)",
+    "publisher": "World Economic Forum",
+    "published": "January 2024",
+    "license_and_access": "Public WEF report (CC BY-NC-ND 4.0 / public download URL)",
+    "source_url": "https://www3.weforum.org/docs/WEF_The_Global_Risks_Report_2024.pdf",
+    "local_path": "data/advanced/raw/WEF_Global_Risks_2024.pdf",
+    "pages": 124,
+    "size_bytes": 13194848,
+    "sha256": "af3939585e44d9ccf8d2f5d3d67bf696c1f84f44aac0f711878f515671aee593"
+  },
+  "total_pages": 124,
+  "total_chunks": 648,
+  "chunks_by_modality": {
+    "text": 540,
+    "table": 12,
+    "visual": 96
+  },
+  "visual_pages_indexed": 96,
+  "pages_without_text": [
+    1,
+    124
+  ],
+  "skipped_visual_pages": [
+    {
+      "page": 1,
+      "reason": "cover_or_imprint"
+    },
+    {
+      "page": 2,
+      "reason": "cover_or_imprint"
+    },
+    {
+      "page": 3,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 4,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 5,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 10,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 20,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 24,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 26,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 30,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 32,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 41,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 66,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 84,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 85,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 87,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 90,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 92,
+      "reason": "decorative_stock_photo_only"
+    },
+    {
+      "page": 115,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 116,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 117,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 118,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 119,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 120,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 121,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 122,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 123,
+      "reason": "text_only_page"
+    },
+    {
+      "page": 124,
+      "reason": "cover_or_imprint"
+    }
+  ],
+  "limitations": "Pages 1, 2, and 124 are cover/imprint art; pages flagged decorative_stock_photo_only contain Unsplash photography without data labels and are excluded from visual chunks (all pages remain rendered in pages/pXXX.png). Vision summaries may contain minor rounding; live inspect_page_image tool reads original high-res PNGs at query time.",
+  "embedding_model": "text-embedding-3-small",
+  "embedding_dimensions": 1536,
+  "embedding_tokens": 138433,
+  "embedding_cost_usd": 0.00276866,
+  "vision_indexing_model": "gpt-6-luna",
+  "vision_prompt_tokens": 275165,
+  "vision_completion_tokens": 35528,
+  "vision_indexing_cost_usd": 0.045281,
+  "total_indexing_cost_usd": 0.04805,
+  "elapsed_seconds": 129.06,
+  "pgvector_table": "advanced_chunks"
+}

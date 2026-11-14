@@ -1,0 +1,40 @@
+{
+  "config_name": "cfg2_multimodal_live_vision",
+  "cases": 30,
+  "answered": 24,
+  "abstain": 6,
+  "total_cost_usd": 0.041576,
+  "avg_latency_ms": 5658.49,
+  "by_category_status": {
+    "Bảng": {
+      "answered": 6,
+      "abstain": 0,
+      "total": 6
+    },
+    "Ảnh, sơ đồ": {
+      "answered": 5,
+      "abstain": 0,
+      "total": 5
+    },
+    "Biểu đồ": {
+      "answered": 5,
+      "abstain": 0,
+      "total": 5
+    },
+    "Multi-hop": {
+      "answered": 4,
+      "abstain": 0,
+      "total": 4
+    },
+    "Text": {
+      "answered": 4,
+      "abstain": 0,
+      "total": 4
+    },
+    "Thiếu bằng chứng": {
+      "answered": 0,
+      "abstain": 6,
+      "total": 6
+    }
+  }
+}

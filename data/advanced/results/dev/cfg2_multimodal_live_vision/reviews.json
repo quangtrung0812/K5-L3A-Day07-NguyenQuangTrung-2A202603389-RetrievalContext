@@ -1,0 +1,24 @@
+{
+  "config_name": "cfg2_multimodal_live_vision",
+  "split": "dev",
+  "reviews": [
+    {"id": "dev-tbl-01", "verdict": "pass", "notes": "Exact match against p.103 PNG."},
+    {"id": "dev-tbl-02", "verdict": "pass", "notes": "Exact match against p.103 PNG."},
+    {"id": "dev-tbl-03", "verdict": "pass", "notes": "Exact match against p.96 PNG."},
+    {"id": "dev-vis-01", "verdict": "pass", "notes": "Exact match against p.40 PNG."},
+    {"id": "dev-vis-02", "verdict": "pass", "notes": "Exact match against p.47 PNG."},
+    {"id": "dev-vis-03", "verdict": "pass", "notes": "Exact match against p.43 PNG."},
+    {"id": "dev-cht-01", "verdict": "pass", "notes": "Exact match against p.13 PNG."},
+    {"id": "dev-cht-02", "verdict": "pass", "notes": "Exact match against p.88 PNG (frontier technologies 58%)."},
+    {"id": "dev-cht-03", "verdict": "pass", "notes": "Exact match against p.46 PNG (US$21B, $125B/yr, $387B/yr, gap $194-366B/yr)."},
+    {"id": "dev-mh-01", "verdict": "pass", "notes": "Exact match against p.101 + p.15 PNG."},
+    {"id": "dev-mh-02", "verdict": "pass", "notes": "Exact match against p.42 PNG."},
+    {"id": "dev-mh-03", "verdict": "pass", "notes": "Exact match against p.51 + p.52 PNG."},
+    {"id": "dev-txt-01", "verdict": "pass", "notes": "Exact match against p.5-6."},
+    {"id": "dev-txt-02", "verdict": "pass", "notes": "Exact match against p.45."},
+    {"id": "dev-txt-03", "verdict": "pass", "notes": "Exact match against p.48."},
+    {"id": "dev-una-01", "verdict": "pass", "notes": "Correctly abstained on out-of-edition 2025 ranking."},
+    {"id": "dev-una-02", "verdict": "pass", "notes": "Correctly abstained."},
+    {"id": "dev-una-03", "verdict": "pass", "notes": "Correctly abstained."}
+  ]
+}

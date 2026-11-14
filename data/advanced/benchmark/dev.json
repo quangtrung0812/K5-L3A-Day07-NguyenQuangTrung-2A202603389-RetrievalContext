@@ -1,0 +1,215 @@
+{
+  "document": "WEF Global Risks Report 2024 (19th Edition, 124 pages)",
+  "source_id": "wef-grr-2024",
+  "split": "dev",
+  "locked_before_experiments": true,
+  "quotas": {
+    "Bảng": 3,
+    "Ảnh, sơ đồ": 3,
+    "Biểu đồ": 3,
+    "Multi-hop": 3,
+    "Text": 3,
+    "Thiếu bằng chứng": 3,
+    "total": 18
+  },
+  "cases": [
+    {
+      "id": "dev-tbl-01",
+      "split": "dev",
+      "category": "Bảng",
+      "answerable": true,
+      "question": "Theo Table C.2 (Executive Opinion Survey) trong WEF Global Risks Report 2024, 5 rủi ro hàng đầu của Australia theo đúng thứ tự từ 1 đến 5 là gì?",
+      "gold_answer": "1st: Economic downturn; 2nd: Inflation; 3rd: Household debt; 4th: Energy supply shortage; 5th: Extreme weather events.",
+      "evidence_pages": [103],
+      "evidence_figure": "Table C.2",
+      "verification_note": "Verified on p.103 Table C.2 Australia block: 1st Economic downturn, 2nd Inflation, 3rd Household debt, 4th Energy supply shortage, 5th Extreme weather events."
+    },
+    {
+      "id": "dev-tbl-02",
+      "split": "dev",
+      "category": "Bảng",
+      "answerable": true,
+      "question": "Theo giải thích và dữ liệu tại Table C.2, vì sao Bangladesh có 6 dòng xếp hạng (gồm hai mục đều ghi '5th') và hai rủi ro đồng hạng 5 của Bangladesh là gì?",
+      "gold_answer": "Các rủi ro đồng hạng (tied risks) được trình bày theo thứ tự bảng chữ cái và cùng ghi thứ hạng đồng hạng; ở Bangladesh hai rủi ro đồng hạng 5 (5th) là Public debt và Unemployment.",
+      "evidence_pages": [103],
+      "evidence_figure": "Table C.2",
+      "verification_note": "Verified on p.103 header note ('Tied risks are presented in alphabetical order, with the tie indicated by numbering') and Bangladesh card showing 5th Public debt and 5th Unemployment."
+    },
+    {
+      "id": "dev-tbl-03",
+      "split": "dev",
+      "category": "Bảng",
+      "answerable": true,
+      "question": "Theo bảng Table A.1 (Definitions of global risks), rủi ro 'Non-weather-related natural disasters' thuộc nhóm danh mục lớn nào và gồm những loại thiên tai ví dụ nào (đất, nước, ngoài Trái Đất)?",
+      "gold_answer": "Thuộc nhóm Environmental; bao gồm thiên tai trên đất liền (earthquakes, volcanos), thiên tai dưới nước (tsunamis) và thiên tai ngoài Trái Đất (asteroid strikes, geomagnetic storms).",
+      "evidence_pages": [96],
+      "evidence_figure": "Table A.1",
+      "verification_note": "Verified on p.96 Table A.1 under ENVIRONMENTAL: Non-weather-related natural disasters includes land-based (earthquakes, volcanos), water-based (tsunamis), and extra-terrestrial based (asteroid strikes and geomagnetic storms)."
+    },
+    {
+      "id": "dev-vis-01",
+      "split": "dev",
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "question": "Trong sơ đồ 4 lực cấu trúc Box 2.1 (Structural forces), bốn lực cấu trúc là gì và hai lực nào nằm ở cột bên phải của sơ đồ ma trận 2x2?",
+      "gold_answer": "Bốn lực cấu trúc là Technological acceleration, Climate change, Geostrategic shifts và Demographic bifurcation. Cột bên phải gồm Climate change (trên) và Demographic bifurcation (dưới).",
+      "evidence_pages": [40],
+      "evidence_figure": "Box 2.1",
+      "verification_note": "Verified on p.40 Box 2.1 2x2 diagram: top-left Technological acceleration, bottom-left Geostrategic shifts, top-right Climate change, bottom-right Demographic bifurcation."
+    },
+    {
+      "id": "dev-vis-02",
+      "split": "dev",
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "question": "Theo chuỗi bản đồ vệ tinh minh họa mực nước biển dâng Figure 2.9 (Indicative sea level rise, selected countries), hình ảnh hiển thị những quốc gia hoặc nhóm quốc gia nào ở ba mốc +0.0m, +0.6m và +3.2m?",
+      "gold_answer": "Bốn nhóm quốc gia/quốc gia gồm: Belgium and the Netherlands, United Arab Emirates, United States và Bangladesh.",
+      "evidence_pages": [47],
+      "evidence_figure": "Figure 2.9",
+      "verification_note": "Verified on p.47 Figure 2.9: 4 rows x 3 columns (+0.0m, +0.6m, +3.2m) for Belgium and the Netherlands, United Arab Emirates, United States, Bangladesh."
+    },
+    {
+      "id": "dev-vis-03",
+      "split": "dev",
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "question": "Theo chú giải Category và các nhãn trên bản đồ thế giới Figure 2.5 (Examples of global and regional tipping points), ba hệ thống nào thuộc nhóm 'Circulation patterns' (thanh dọc màu xanh dương nhạt) được đánh dấu trên bản đồ?",
+      "gold_answer": "Ba hệ thống thuộc nhóm Circulation patterns trên Figure 2.5 là: Labrador sea/subpolar gyre (Collapse), Atlantic Meridional Overturning Circulation (AMOC) (Collapse), và Sahel/West African monsoon (Greening).",
+      "evidence_pages": [43],
+      "evidence_figure": "Figure 2.5",
+      "verification_note": "Verified on p.43 Figure 2.5 legend (light-blue bar = Circulation patterns) and map callout bars: Labrador sea/subpolar gyre, Atlantic Meridional Overturning Circulation (AMOC), Sahel/West African monsoon."
+    },
+    {
+      "id": "dev-cht-01",
+      "split": "dev",
+      "category": "Biểu đồ",
+      "answerable": true,
+      "question": "Theo biểu đồ thanh ngang Figure 1.2 (Current risk landscape) về khả năng gây khủng hoảng vật chất năm 2024, 3 rủi ro đứng đầu và tỷ lệ phần trăm người trả lời chọn từng rủi ro đó là bao nhiêu?",
+      "gold_answer": "1st: Extreme weather (66%); 2nd: AI-generated misinformation and disinformation (53%); 3rd: Societal and/or political polarization (46%).",
+      "evidence_pages": [13],
+      "evidence_figure": "Figure 1.2",
+      "verification_note": "Verified on p.13 Figure 1.2 horizontal bar chart: Extreme weather 66%, AI-generated misinformation and disinformation 53%, Societal and/or political polarization 46%."
+    },
+    {
+      "id": "dev-cht-02",
+      "split": "dev",
+      "category": "Biểu đồ",
+      "answerable": true,
+      "question": "Theo biểu đồ thanh ngang Figure 3.2 (Top global risks addressed by Research and development), hai rủi ro đứng vị trí số 1 và số 2 trong biểu đồ là gì và có tỷ lệ người chọn bao nhiêu phần trăm?",
+      "gold_answer": "Vị trí số 1 là Infectious diseases (81%) và vị trí số 2 là Adverse outcomes of frontier technologies (58%).",
+      "evidence_pages": [88],
+      "evidence_figure": "Figure 3.2",
+      "verification_note": "Verified on p.88 Figure 3.2 horizontal bar chart: 1st Infectious diseases 81%, 2nd Adverse outcomes of frontier technologies 58%."
+    },
+    {
+      "id": "dev-cht-03",
+      "split": "dev",
+      "category": "Biểu đồ",
+      "answerable": true,
+      "question": "Theo biểu đồ cột Figure 2.8 (Adaptation finance gap), các giá trị dòng tài chính công quốc tế năm 2021 (International public finance flows), chi phí thích ứng mô hình hóa thập kỷ này (Modelled costs of adaptation), nhu cầu tài chính thích ứng đến năm 2030 (Adaptation financing needs) và khoảng thiếu hụt tài chính (adaptation finance gap) là bao nhiêu?",
+      "gold_answer": "International public finance flows năm 2021: US$21 billion; Modelled costs of adaptation thập kỷ này: US$125 billion/year; Adaptation financing needs đến 2030: US$387 billion/year; khoảng thiếu hụt tài chính thích ứng ước tính: US$194 to US$366 billion/year.",
+      "evidence_pages": [46],
+      "evidence_figure": "Figure 2.8",
+      "verification_note": "Verified on p.46 Figure 2.8 bar chart + annotation: US$21 billion in 2021, US$125 billion/year this decade, US$387 billion/year up to 2030, gap US$194 to US$366 billion/year."
+    },
+    {
+      "id": "dev-mh-01",
+      "split": "dev",
+      "category": "Multi-hop",
+      "answerable": true,
+      "question": "Kết hợp Table B.1 (Survey sample composition) và Figure 1.5 (Severity by stakeholder over the short term), nhóm tổ chức nào chiếm tỷ trọng lớn nhất trong mẫu khảo sát GRPS (tỷ lệ % và cỡ mẫu n) và hai rủi ro đứng hạng 1 và hạng 2 trong khung ngắn hạn 2 năm của nhóm đó là gì?",
+      "gold_answer": "Nhóm tổ chức lớn nhất là Private sector (48%, cỡ mẫu n=715). Hai rủi ro đứng đầu 2 năm của Private sector trong Figure 1.5 là 1st Misinformation and disinformation và 2nd Extreme weather events.",
+      "evidence_pages": [101, 15],
+      "evidence_figure": "Table B.1 + Figure 1.5",
+      "verification_note": "Verified on p.101 Table B.1 (Private sector 48%) and p.15 Figure 1.5 note (private sector n=715 (48%)) + Private sector column (1st Misinformation and disinformation, 2nd Extreme weather events)."
+    },
+    {
+      "id": "dev-mh-02",
+      "split": "dev",
+      "category": "Multi-hop",
+      "answerable": true,
+      "question": "Kết hợp Figure 2.4 (hoặc Figure C) và văn bản chương 2.3 (A 3°C world), rủi ro 'Critical change to Earth systems' xếp hạng mấy và điểm trung bình 10 năm là bao nhiêu trên thang 7, đồng thời 4 hệ thống hành tinh nào được nêu là có khả năng vượt ngưỡng bùng phát tại mức 1.5°C?",
+      "gold_answer": "Xếp hạng 2 trong dài hạn 10 năm (10-year rank: 2nd) với điểm trung bình 10 năm là 5.9 (trên thang 1-7). Bốn hệ thống có khả năng chạm ngưỡng bùng phát ở mức 1.5°C là: suy thoái/chết rạn san hô vĩ độ thấp (low-latitude coral reefs die-off), sụp đổ dải băng Greenland (Greenland Ice Sheet), sụp đổ dải băng Tây Nam Cực (West Antarctic Ice Sheet) và tan băng vĩnh cửu đột ngột (abrupt thawing of permafrost).",
+      "evidence_pages": [8, 42],
+      "evidence_figure": "Figure C + Figure 2.4 + Chapter 2.3 text",
+      "verification_note": "Verified on p.8 Figure C (10y rank 2nd) and p.42 Figure 2.4 (10-year rank: 2nd, 10-year average: 5.9) and p.42 column 1 prose listing the 4 systems."
+    },
+    {
+      "id": "dev-mh-03",
+      "split": "dev",
+      "category": "Multi-hop",
+      "answerable": true,
+      "question": "Kết hợp phần 'Entrenched market concentration' (và Figure 2.12) với sơ đồ chuỗi giá trị Figure 2.13 (Indicative value chain of generative AI technologies), hai yếu tố rủi ro DUY NHẤT nào được người khảo sát GRPS xác định là nguyên nhân trực tiếp dẫn đến 'Adverse outcomes of AI technologies', và ở ô 'Design*' trong chuỗi giá trị AI tạo sinh hãng nào chiếm 95% thị phần chip GPU cho học máy?",
+      "gold_answer": "Hai rủi ro dẫn dắt duy nhất là Cyber insecurity và Technological power concentration; ở ô Design* trong Figure 2.13, Nvidia (US) chiếm 95% thị phần chip GPU dùng cho học máy.",
+      "evidence_pages": [51, 52],
+      "evidence_figure": "Figure 2.12 + Figure 2.13",
+      "verification_note": "Verified on p.51 text/Figure 2.12 ('Cyber insecurity and Technological power concentration as the only risk drivers of Adverse outcomes of AI technologies') and p.52 Figure 2.13 Design* box ('Nvidia (US) has captured 95% of the market for GPU chips that can be used for machine learning')."
+    },
+    {
+      "id": "dev-txt-01",
+      "split": "dev",
+      "category": "Text",
+      "answerable": true,
+      "question": "Theo phần 'Key findings' đầu báo cáo, khảo sát Global Risks Perception Survey (GRPS) được thực hiện vào thời gian nào và thu thập ý kiến của khoảng bao nhiêu chuyên gia toàn cầu?",
+      "gold_answer": "Khảo sát GRPS thu thập ý kiến của gần 1,500 chuyên gia toàn cầu (nearly 1,500 global experts) và được khảo sát vào tháng 9 năm 2023 (September 2023).",
+      "evidence_pages": [6],
+      "evidence_figure": null,
+      "verification_note": "Verified on p.6 columns 1-2: 'nearly 1,500 global experts' and 'Surveyed in September 2023'."
+    },
+    {
+      "id": "dev-txt-02",
+      "split": "dev",
+      "category": "Text",
+      "answerable": true,
+      "question": "Theo mục 'Adaptation readiness' trong chương khí hậu, tại Australia dự báo có gần bao nhiêu ngôi nhà không thể mua bảo hiểm vào năm 2030 do rủi ro thời tiết cực đoan?",
+      "gold_answer": "Gần 521,000 ngôi nhà (nearly 521,000 homes) ở Australia được dự báo sẽ không thể mua bảo hiểm vào năm 2030 do rủi ro thời tiết cực đoan.",
+      "evidence_pages": [45],
+      "evidence_figure": null,
+      "verification_note": "Verified on p.45 column 2: 'in Australia nearly 521,000 homes are predicted to be uninsurable by 2030 due to the risks of extreme weather.'"
+    },
+    {
+      "id": "dev-txt-03",
+      "split": "dev",
+      "category": "Text",
+      "answerable": true,
+      "question": "Theo mục 'Technological tipping points', đầu tư vào thu giữ và lưu trữ carbon (carbon capture and storage) năm 2023 đạt mức kỷ lục bao nhiêu tỷ USD, và Hoa Kỳ đã cấp bao nhiêu tỷ USD cho hai trung tâm Direct Air Capture ở hai bang nào?",
+      "gold_answer": "Đầu tư vào carbon capture and storage đạt kỷ lục $6.4 billion năm 2023, và Hoa Kỳ đã cấp $1.2 billion tài trợ dài hạn cho hai trung tâm Direct Air Capture tại bang Texas và Louisiana.",
+      "evidence_pages": [48],
+      "evidence_figure": null,
+      "verification_note": "Verified on p.48 column 1: 'hit a record high of $6.4 billion in 2023, and the United States has already granted $1.2 billion in long-term funding to two Direct Air Capture hub developments in the states of Texas and Louisiana'."
+    },
+    {
+      "id": "dev-una-01",
+      "split": "dev",
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "question": "Theo WEF Global Risks Report 2024, bảng xếp hạng Global Risks Report 2025 đặt rủi ro nào ở vị trí số 1 cho năm 2025?",
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (WEF Global Risks Report 2024 chỉ công bố kết quả khảo sát 2023-2024, không chứa bảng xếp hạng của Global Risks Report 2025).",
+      "evidence_pages": [],
+      "evidence_figure": null,
+      "verification_note": "Verified across all 124 pages: '2025 global risks' count=0."
+    },
+    {
+      "id": "dev-una-02",
+      "split": "dev",
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "question": "Theo WEF Global Risks Report 2024, tỷ lệ thất nghiệp dự báo của Đức (unemployment rate in Germany) năm 2025 là bao nhiêu phần trăm?",
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không nêu số liệu tỷ lệ thất nghiệp dự báo của Đức).",
+      "evidence_pages": [],
+      "evidence_figure": null,
+      "verification_note": "Verified across all 124 pages: 'unemployment rate in germany' count=0."
+    },
+    {
+      "id": "dev-una-03",
+      "split": "dev",
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "question": "Theo WEF Global Risks Report 2024, tổng lượng phát thải Scope 3 (Scope 3 emissions) tính bằng triệu tấn CO2e của các tập đoàn công nghệ lớn là bao nhiêu?",
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không đề cập số liệu phát thải Scope 3).",
+      "evidence_pages": [],
+      "evidence_figure": null,
+      "verification_note": "Verified across all 124 pages: 'scope 3 emissions' count=0."
+    }
+  ]
+}

@@ -1,0 +1,1752 @@
+{
+  "config": {
+    "name": "cfg0_text_only_baseline",
+    "model": "gpt-6-luna",
+    "default_mode": "hybrid",
+    "text_only": true,
+    "enable_live_vision": false,
+    "max_searches": 4,
+    "max_inspects": 0,
+    "top_k": 5,
+    "context_budget": 6000,
+    "temperature": 0.0
+  },
+  "traces": [
+    {
+      "query_id": "dev-tbl-01",
+      "question": "Theo Table C.2 (Executive Opinion Survey) trong WEF Global Risks Report 2024, 5 rủi ro hàng đầu của Australia theo đúng thứ tự từ 1 đến 5 là gì?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Hai lượt tìm kiếm khác nhau trong Table C.2 không trả về mục Australia, nên chưa có bằng chứng đủ để xác định chính xác thứ hạng 1–5. Theo yêu cầu, không suy đoán từ các mục khác.",
+      "citations": [],
+      "search_calls": 4,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p061:text:01",
+        "wef-grr-2024:p105:text:01",
+        "wef-grr-2024:p103:text:03",
+        "wef-grr-2024:p108:text:01",
+        "wef-grr-2024:p107:text:01",
+        "wef-grr-2024:p106:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 Executive Opinion Survey Australia top five risks ranking",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1893.71,
+          "retrieval_ms": 552.33,
+          "returned_ids": [
+            "wef-grr-2024:p061:text:01",
+            "wef-grr-2024:p105:text:01",
+            "wef-grr-2024:p103:text:03",
+            "wef-grr-2024:p108:text:01",
+            "wef-grr-2024:p107:text:01"
+          ],
+          "pages": [
+            61,
+            105,
+            103,
+            108,
+            107
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Australia 1st 2nd 3rd 4th 5th Table C.2 EOS",
+          "modality": "text",
+          "page_range": [
+            103,
+            108
+          ],
+          "llm_ms": 2324.65,
+          "retrieval_ms": 1.52,
+          "returned_ids": [
+            "wef-grr-2024:p107:text:01",
+            "wef-grr-2024:p105:text:01",
+            "wef-grr-2024:p108:text:01",
+            "wef-grr-2024:p106:text:01",
+            "wef-grr-2024:p104:text:01"
+          ],
+          "pages": [
+            107,
+            105,
+            108,
+            106,
+            104
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Australia Table C.2 top five risks Executive Opinion Survey 2023",
+          "modality": "text",
+          "page_range": [
+            103,
+            110
+          ],
+          "llm_ms": 1630.13,
+          "retrieval_ms": 921.29,
+          "returned_ids": [
+            "wef-grr-2024:p103:text:03",
+            "wef-grr-2024:p105:text:01",
+            "wef-grr-2024:p106:text:01",
+            "wef-grr-2024:p108:text:01",
+            "wef-grr-2024:p110:text:01"
+          ],
+          "pages": [
+            103,
+            105,
+            106,
+            108,
+            110
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "Australia 1st Economic downturn Labour shortage EOS Table C.2",
+          "modality": "text",
+          "page_range": [
+            103,
+            110
+          ],
+          "llm_ms": 1817.95,
+          "retrieval_ms": 342.39,
+          "returned_ids": [
+            "wef-grr-2024:p106:text:02",
+            "wef-grr-2024:p110:text:01",
+            "wef-grr-2024:p103:text:02",
+            "wef-grr-2024:p108:text:01",
+            "wef-grr-2024:p105:text:01"
+          ],
+          "pages": [
+            106,
+            110,
+            103,
+            108,
+            105
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1760.44,
+          "reason": "Hai lượt tìm kiếm khác nhau trong Table C.2 không trả về mục Australia, nên chưa có bằng chứng đủ để xác định chính xác thứ hạng 1–5. Theo yêu cầu, không suy đoán từ các mục khác."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 5,
+      "llm_prompt_tokens": 25085,
+      "llm_completion_tokens": 239,
+      "embedding_tokens": 39,
+      "cost_usd": 0.00262878,
+      "latency_ms": 11245.0,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        103
+      ],
+      "gold_answer": "1st: Economic downturn; 2nd: Inflation; 3rd: Household debt; 4th: Energy supply shortage; 5th: Extreme weather events."
+    },
+    {
+      "query_id": "dev-tbl-02",
+      "question": "Theo giải thích và dữ liệu tại Table C.2, vì sao Bangladesh có 6 dòng xếp hạng (gồm hai mục đều ghi '5th') và hai rủi ro đồng hạng 5 của Bangladesh là gì?",
+      "status": "answered",
+      "answer": "Bangladesh có sáu dòng vì hai rủi ro cùng được xếp ở vị trí thứ 5; Table C.2 ghi các rủi ro đồng hạng theo thứ tự chữ cái và lặp số thứ hạng cho từng rủi ro, nên không có một mục hạng 6 riêng trong danh sách năm vị trí. [wef-grr-2024:p103:text:01] Hai rủi ro đồng hạng 5 là **Public debt (nợ công)** và **Unemployment (thất nghiệp)**. [wef-grr-2024:p103:text:03]",
+      "citations": [
+        "wef-grr-2024:p103:text:01",
+        "wef-grr-2024:p103:text:03"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p072:text:04",
+        "wef-grr-2024:p103:text:01",
+        "wef-grr-2024:p071:text:04",
+        "wef-grr-2024:p103:text:03",
+        "wef-grr-2024:p061:text:01",
+        "wef-grr-2024:p103:text:02"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 Bangladesh country risk rankings two 5th entries explanation",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1440.23,
+          "retrieval_ms": 375.51,
+          "returned_ids": [
+            "wef-grr-2024:p072:text:04",
+            "wef-grr-2024:p103:text:01",
+            "wef-grr-2024:p071:text:04",
+            "wef-grr-2024:p103:text:03",
+            "wef-grr-2024:p061:text:01"
+          ],
+          "pages": [
+            72,
+            103,
+            71,
+            103,
+            61
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Table C.2 tied risks numbering alphabetical order Bangladesh Public debt Unemployment tie fifth",
+          "modality": "text",
+          "page_range": [
+            102,
+            104
+          ],
+          "llm_ms": 1419.18,
+          "retrieval_ms": 2.07,
+          "returned_ids": [
+            "wef-grr-2024:p103:text:01",
+            "wef-grr-2024:p103:text:03",
+            "wef-grr-2024:p103:text:02",
+            "wef-grr-2024:p104:text:01",
+            "wef-grr-2024:p104:text:02"
+          ],
+          "pages": [
+            103,
+            103,
+            103,
+            104,
+            104
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p103:text:01",
+            "wef-grr-2024:p103:text:03"
+          ],
+          "llm_ms": 2953.06
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 7545,
+      "llm_completion_tokens": 257,
+      "embedding_tokens": 14,
+      "cost_usd": 0.00088328,
+      "latency_ms": 6190.4,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        103
+      ],
+      "gold_answer": "Các rủi ro đồng hạng (tied risks) được trình bày theo thứ tự bảng chữ cái và cùng ghi thứ hạng đồng hạng; ở Bangladesh hai rủi ro đồng hạng 5 (5th) là Public debt và Unemployment."
+    },
+    {
+      "query_id": "dev-tbl-03",
+      "question": "Theo bảng Table A.1 (Definitions of global risks), rủi ro 'Non-weather-related natural disasters' thuộc nhóm danh mục lớn nào và gồm những loại thiên tai ví dụ nào (đất, nước, ngoài Trái Đất)?",
+      "status": "answered",
+      "answer": "Trong Table A.1, “Non-weather-related natural disasters” thuộc nhóm danh mục lớn **Environmental (Môi trường)**. Định nghĩa nêu các thiên tai ví dụ gồm: **trên đất liền** (động đất, núi lửa), **trên nước** (sóng thần) và **ngoài Trái Đất** (va chạm tiểu hành tinh, bão địa từ). [wef-grr-2024:p096:text:02] [wef-grr-2024:p096:text:04]",
+      "citations": [
+        "wef-grr-2024:p096:text:02",
+        "wef-grr-2024:p096:text:04"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p096:text:04",
+        "wef-grr-2024:p037:text:02",
+        "wef-grr-2024:p106:text:03",
+        "wef-grr-2024:p096:text:02",
+        "wef-grr-2024:p096:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table A.1 Definitions of global risks Non-weather-related natural disasters definition land water extraterrestrial examples",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1321.52,
+          "retrieval_ms": 372.97,
+          "returned_ids": [
+            "wef-grr-2024:p096:text:04",
+            "wef-grr-2024:p037:text:02",
+            "wef-grr-2024:p106:text:03",
+            "wef-grr-2024:p096:text:02",
+            "wef-grr-2024:p096:text:01"
+          ],
+          "pages": [
+            96,
+            37,
+            106,
+            96,
+            96
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Table A.1 Definitions of global risks page 96 Non-weather-related natural disasters category Environmental",
+          "modality": "text",
+          "page_range": [
+            96,
+            96
+          ],
+          "llm_ms": 1527.31,
+          "retrieval_ms": 2.6,
+          "returned_ids": [
+            "wef-grr-2024:p096:text:02",
+            "wef-grr-2024:p096:text:01",
+            "wef-grr-2024:p096:text:04"
+          ],
+          "pages": [
+            96,
+            96,
+            96
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p096:text:02",
+            "wef-grr-2024:p096:text:04"
+          ],
+          "llm_ms": 2302.87
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 5907,
+      "llm_completion_tokens": 251,
+      "embedding_tokens": 21,
+      "cost_usd": 0.00071662,
+      "latency_ms": 5527.53,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        96
+      ],
+      "gold_answer": "Thuộc nhóm Environmental; bao gồm thiên tai trên đất liền (earthquakes, volcanos), thiên tai dưới nước (tsunamis) và thiên tai ngoài Trái Đất (asteroid strikes, geomagnetic storms)."
+    },
+    {
+      "query_id": "dev-vis-01",
+      "question": "Trong sơ đồ 4 lực cấu trúc Box 2.1 (Structural forces), bốn lực cấu trúc là gì và hai lực nào nằm ở cột bên phải của sơ đồ ma trận 2x2?",
+      "status": "answered",
+      "answer": "Bốn lực cấu trúc là **tăng tốc công nghệ (technological acceleration), dịch chuyển địa chiến lược (geostrategic shifts), biến đổi khí hậu (climate change), và phân hóa nhân khẩu học (demographic bifurcation)**. [wef-grr-2024:p040:text:02] Trong sơ đồ ma trận 2×2 ở Box 2.1, cột bên phải gồm **dịch chuyển địa chiến lược** (ô trên) và **phân hóa nhân khẩu học** (ô dưới). [wef-grr-2024:p040:text:01]",
+      "citations": [
+        "wef-grr-2024:p040:text:02",
+        "wef-grr-2024:p040:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p040:text:01",
+        "wef-grr-2024:p040:text:02",
+        "wef-grr-2024:p077:text:02",
+        "wef-grr-2024:p095:text:03",
+        "wef-grr-2024:p004:text:05",
+        "wef-grr-2024:p040:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Box 2.1 Structural forces four structural forces 2x2 matrix right column",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1373.07,
+          "retrieval_ms": 453.78,
+          "returned_ids": [
+            "wef-grr-2024:p040:text:01",
+            "wef-grr-2024:p040:text:02",
+            "wef-grr-2024:p077:text:02",
+            "wef-grr-2024:p095:text:03",
+            "wef-grr-2024:p004:text:05"
+          ],
+          "pages": [
+            40,
+            40,
+            77,
+            95,
+            4
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Box 2.1 structural forces diagram matrix technological acceleration geostrategic shifts climate change demographic bifurcation",
+          "modality": "text",
+          "page_range": [
+            40,
+            40
+          ],
+          "llm_ms": 1491.42,
+          "retrieval_ms": 2.1,
+          "returned_ids": [
+            "wef-grr-2024:p040:text:02",
+            "wef-grr-2024:p040:text:01",
+            "wef-grr-2024:p040:text:03",
+            "wef-grr-2024:p040:text:04"
+          ],
+          "pages": [
+            40,
+            40,
+            40,
+            40
+          ]
+        },
+        {
+          "event": "citation_retry",
+          "invalid_citations": [
+            "wef-grr-2024:p040:image"
+          ],
+          "llm_ms": 2611.41
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p040:text:02",
+            "wef-grr-2024:p040:text:01"
+          ],
+          "llm_ms": 2296.1
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 9894,
+      "llm_completion_tokens": 437,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00120824,
+      "latency_ms": 8228.16,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        40
+      ],
+      "gold_answer": "Bốn lực cấu trúc là Technological acceleration, Climate change, Geostrategic shifts và Demographic bifurcation. Cột bên phải gồm Climate change (trên) và Demographic bifurcation (dưới)."
+    },
+    {
+      "query_id": "dev-vis-02",
+      "question": "Theo chuỗi bản đồ vệ tinh minh họa mực nước biển dâng Figure 2.9 (Indicative sea level rise, selected countries), hình ảnh hiển thị những quốc gia hoặc nhóm quốc gia nào ở ba mốc +0.0m, +0.6m và +3.2m?",
+      "status": "answered",
+      "answer": "Figure 2.9 minh họa bốn quốc gia/nhóm quốc gia: Bỉ và Hà Lan, Các Tiểu vương quốc Ả Rập Thống nhất, Hoa Kỳ và Bangladesh. Với mỗi nơi, hình có ba bản đồ tương ứng các mốc mực nước biển dâng +0.0m, +0.6m và +3.2m. [wef-grr-2024:p047:text:01]",
+      "citations": [
+        "wef-grr-2024:p047:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p047:text:01",
+        "wef-grr-2024:p046:text:03",
+        "wef-grr-2024:p042:text:01",
+        "wef-grr-2024:p058:text:01",
+        "wef-grr-2024:p043:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.9 Indicative sea level rise selected countries +0.0m +0.6m +3.2m satellite maps",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1415.77,
+          "retrieval_ms": 424.81,
+          "returned_ids": [
+            "wef-grr-2024:p047:text:01",
+            "wef-grr-2024:p046:text:03",
+            "wef-grr-2024:p042:text:01",
+            "wef-grr-2024:p058:text:01",
+            "wef-grr-2024:p043:text:04"
+          ],
+          "pages": [
+            47,
+            46,
+            42,
+            58,
+            43
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 2.9 page 47 map labels Belgium Netherlands United Arab Emirates United States Bangladesh sea level rise panels",
+          "modality": "text",
+          "page_range": [
+            47,
+            47
+          ],
+          "llm_ms": 1883.99,
+          "retrieval_ms": 2.48,
+          "returned_ids": [
+            "wef-grr-2024:p047:text:01"
+          ],
+          "pages": [
+            47
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p047:text:01"
+          ],
+          "llm_ms": 2195.37
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6531,
+      "llm_completion_tokens": 232,
+      "embedding_tokens": 30,
+      "cost_usd": 0.0007697,
+      "latency_ms": 5922.66,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        47
+      ],
+      "gold_answer": "Bốn nhóm quốc gia/quốc gia gồm: Belgium and the Netherlands, United Arab Emirates, United States và Bangladesh."
+    },
+    {
+      "query_id": "dev-vis-03",
+      "question": "Theo chú giải Category và các nhãn trên bản đồ thế giới Figure 2.5 (Examples of global and regional tipping points), ba hệ thống nào thuộc nhóm 'Circulation patterns' (thanh dọc màu xanh dương nhạt) được đánh dấu trên bản đồ?",
+      "status": "answered",
+      "answer": "Ba hệ thống thuộc nhóm “Circulation patterns” là **Labrador Sea/subpolar gyre**, **Atlantic Meridional Overturning Circulation (AMOC)** và **Sahel/West African monsoon**. [wef-grr-2024:p043:text:01]",
+      "citations": [
+        "wef-grr-2024:p043:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p043:text:01",
+        "wef-grr-2024:p078:text:01",
+        "wef-grr-2024:p077:text:06",
+        "wef-grr-2024:p044:text:01",
+        "wef-grr-2024:p042:text:05",
+        "wef-grr-2024:p043:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.5 Examples of global and regional tipping points Category Circulation patterns light blue vertical bars labels map",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1488.02,
+          "retrieval_ms": 334.01,
+          "returned_ids": [
+            "wef-grr-2024:p043:text:01",
+            "wef-grr-2024:p078:text:01",
+            "wef-grr-2024:p077:text:06",
+            "wef-grr-2024:p044:text:01",
+            "wef-grr-2024:p042:text:05"
+          ],
+          "pages": [
+            43,
+            78,
+            77,
+            44,
+            42
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 2.5 map circulation patterns Labrador sea subpolar gyre AMOC Sahel West African monsoon",
+          "modality": "text",
+          "page_range": [
+            43,
+            43
+          ],
+          "llm_ms": 1463.36,
+          "retrieval_ms": 1.91,
+          "returned_ids": [
+            "wef-grr-2024:p043:text:01",
+            "wef-grr-2024:p043:text:04",
+            "wef-grr-2024:p043:text:05"
+          ],
+          "pages": [
+            43,
+            43,
+            43
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p043:text:01"
+          ],
+          "llm_ms": 1864.58
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6954,
+      "llm_completion_tokens": 189,
+      "embedding_tokens": 22,
+      "cost_usd": 0.00079034,
+      "latency_ms": 5152.12,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        43
+      ],
+      "gold_answer": "Ba hệ thống thuộc nhóm Circulation patterns trên Figure 2.5 là: Labrador sea/subpolar gyre (Collapse), Atlantic Meridional Overturning Circulation (AMOC) (Collapse), và Sahel/West African monsoon (Greening)."
+    },
+    {
+      "query_id": "dev-cht-01",
+      "question": "Theo biểu đồ thanh ngang Figure 1.2 (Current risk landscape) về khả năng gây khủng hoảng vật chất năm 2024, 3 rủi ro đứng đầu và tỷ lệ phần trăm người trả lời chọn từng rủi ro đó là bao nhiêu?",
+      "status": "answered",
+      "answer": "Ba rủi ro đứng đầu trong Figure 1.2 là: 1) Thời tiết cực đoan (Extreme weather) — 66%; 2) Thông tin sai lệch và xuyên tạc do AI tạo ra (AI-generated misinformation and disinformation) — 53%; 3) Phân cực xã hội và/hoặc chính trị (Societal and/or political polarization) — 46%. [wef-grr-2024:p013:text:01] [wef-grr-2024:p013:text:03]",
+      "citations": [
+        "wef-grr-2024:p013:text:01",
+        "wef-grr-2024:p013:text:03"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p013:text:01",
+        "wef-grr-2024:p099:text:03",
+        "wef-grr-2024:p007:text:04",
+        "wef-grr-2024:p007:text:05",
+        "wef-grr-2024:p013:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.2 Current risk landscape likelihood to cause a material crisis in 2024 top risks percentage respondents",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1675.72,
+          "retrieval_ms": 416.51,
+          "returned_ids": [
+            "wef-grr-2024:p013:text:01",
+            "wef-grr-2024:p099:text:03",
+            "wef-grr-2024:p007:text:04",
+            "wef-grr-2024:p007:text:05",
+            "wef-grr-2024:p013:text:03"
+          ],
+          "pages": [
+            13,
+            99,
+            7,
+            7,
+            13
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 1.2 Current risk landscape horizontal bar chart 66% 53% 46% Extreme weather AI-generated misinformation societal political polarization",
+          "modality": "text",
+          "page_range": [
+            13,
+            13
+          ],
+          "llm_ms": 1858.07,
+          "retrieval_ms": 2.71,
+          "returned_ids": [
+            "wef-grr-2024:p013:text:01",
+            "wef-grr-2024:p013:text:03"
+          ],
+          "pages": [
+            13,
+            13
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p013:text:01",
+            "wef-grr-2024:p013:text:03"
+          ],
+          "llm_ms": 2281.85
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6031,
+      "llm_completion_tokens": 264,
+      "embedding_tokens": 22,
+      "cost_usd": 0.00073554,
+      "latency_ms": 6235.13,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        13
+      ],
+      "gold_answer": "1st: Extreme weather (66%); 2nd: AI-generated misinformation and disinformation (53%); 3rd: Societal and/or political polarization (46%)."
+    },
+    {
+      "query_id": "dev-cht-02",
+      "question": "Theo biểu đồ thanh ngang Figure 3.2 (Top global risks addressed by Research and development), hai rủi ro đứng vị trí số 1 và số 2 trong biểu đồ là gì và có tỷ lệ người chọn bao nhiêu phần trăm?",
+      "status": "answered",
+      "answer": "Theo Figure 3.2, rủi ro đứng thứ nhất là **Bệnh truyền nhiễm (Infectious diseases)**, được **81%** người trả lời chọn; đứng thứ hai là **Các kết quả bất lợi của công nghệ tiên tiến (Adverse outcomes of frontier technologies)**, với **58%**. [wef-grr-2024:p088:text:01]",
+      "citations": [
+        "wef-grr-2024:p088:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p088:text:01",
+        "wef-grr-2024:p113:text:03",
+        "wef-grr-2024:p086:text:05",
+        "wef-grr-2024:p112:text:01",
+        "wef-grr-2024:p114:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 3.2 Top global risks addressed by Research and development horizontal bar chart percentages",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1493.46,
+          "retrieval_ms": 511.89,
+          "returned_ids": [
+            "wef-grr-2024:p088:text:01",
+            "wef-grr-2024:p113:text:03",
+            "wef-grr-2024:p086:text:05",
+            "wef-grr-2024:p112:text:01",
+            "wef-grr-2024:p114:text:03"
+          ],
+          "pages": [
+            88,
+            113,
+            86,
+            112,
+            114
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 3.2 Research and development Infectious diseases 81% Adverse outcomes frontier technologies 58%",
+          "modality": "text",
+          "page_range": [
+            88,
+            88
+          ],
+          "llm_ms": 1901.57,
+          "retrieval_ms": 2.35,
+          "returned_ids": [
+            "wef-grr-2024:p088:text:01"
+          ],
+          "pages": [
+            88
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p088:text:01"
+          ],
+          "llm_ms": 2276.49
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 5943,
+      "llm_completion_tokens": 207,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00069814,
+      "latency_ms": 6186.03,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        88
+      ],
+      "gold_answer": "Vị trí số 1 là Infectious diseases (81%) và vị trí số 2 là Adverse outcomes of frontier technologies (58%)."
+    },
+    {
+      "query_id": "dev-cht-03",
+      "question": "Theo biểu đồ cột Figure 2.8 (Adaptation finance gap), các giá trị dòng tài chính công quốc tế năm 2021 (International public finance flows), chi phí thích ứng mô hình hóa thập kỷ này (Modelled costs of adaptation), nhu cầu tài chính thích ứng đến năm 2030 (Adaptation financing needs) và khoảng thiếu hụt tài chính (adaptation finance gap) là bao nhiêu?",
+      "status": "answered",
+      "answer": "Theo Figure 2.8, các giá trị là: dòng tài chính công quốc tế năm 2021 **US$21 tỷ**; chi phí thích ứng mô hình hóa **US$125 tỷ mỗi năm trong thập kỷ này**; nhu cầu tài chính thích ứng **US$387 tỷ mỗi năm đến năm 2030**; và khoảng thiếu hụt tài chính thích ứng **US$194–366 tỷ mỗi năm**, dựa trên dòng tài chính thích ứng năm 2021. [wef-grr-2024:p046:text:01]",
+      "citations": [
+        "wef-grr-2024:p046:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p046:text:01",
+        "wef-grr-2024:p045:text:03",
+        "wef-grr-2024:p045:text:01",
+        "wef-grr-2024:p078:text:02",
+        "wef-grr-2024:p043:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.8 Adaptation finance gap International public finance flows 2021 Modelled costs of adaptation this decade Adaptation financing needs 2030",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1578.89,
+          "retrieval_ms": 545.84,
+          "returned_ids": [
+            "wef-grr-2024:p046:text:01",
+            "wef-grr-2024:p045:text:03",
+            "wef-grr-2024:p045:text:01",
+            "wef-grr-2024:p078:text:02",
+            "wef-grr-2024:p043:text:03"
+          ],
+          "pages": [
+            46,
+            45,
+            45,
+            78,
+            43
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 2.8 adaptation finance gap chart values US$21 billion US$125 billion US$387 billion US$194 US$366",
+          "modality": "text",
+          "page_range": [
+            46,
+            46
+          ],
+          "llm_ms": 1416.64,
+          "retrieval_ms": 2.57,
+          "returned_ids": [
+            "wef-grr-2024:p046:text:01"
+          ],
+          "pages": [
+            46
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p046:text:01"
+          ],
+          "llm_ms": 2416.43
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6074,
+      "llm_completion_tokens": 260,
+      "embedding_tokens": 30,
+      "cost_usd": 0.000738,
+      "latency_ms": 5960.6,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        46
+      ],
+      "gold_answer": "International public finance flows năm 2021: US$21 billion; Modelled costs of adaptation thập kỷ này: US$125 billion/year; Adaptation financing needs đến 2030: US$387 billion/year; khoảng thiếu hụt tài chính thích ứng ước tính: US$194 to US$366 billion/year."
+    },
+    {
+      "query_id": "dev-mh-01",
+      "question": "Kết hợp Table B.1 (Survey sample composition) và Figure 1.5 (Severity by stakeholder over the short term), nhóm tổ chức nào chiếm tỷ trọng lớn nhất trong mẫu khảo sát GRPS (tỷ lệ % và cỡ mẫu n) và hai rủi ro đứng hạng 1 và hạng 2 trong khung ngắn hạn 2 năm của nhóm đó là gì?",
+      "status": "answered",
+      "answer": "Nhóm chiếm tỷ trọng lớn nhất là **khu vực tư nhân (Private sector)**: **48%**, khoảng **n=715** người trả lời. [wef-grr-2024:p101:text:01] [wef-grr-2024:p015:text:04]\n\nTrong Figure 1.5, với nhóm này, hai rủi ro đứng đầu trong khung ngắn hạn 2 năm là **(1) Lạm phát (Inflation)** và **(2) Thiếu cơ hội kinh tế (Lack of economic opportunity)**. [wef-grr-2024:p015:text:03]",
+      "citations": [
+        "wef-grr-2024:p101:text:01",
+        "wef-grr-2024:p015:text:04",
+        "wef-grr-2024:p015:text:03"
+      ],
+      "search_calls": 4,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p101:text:01",
+        "wef-grr-2024:p101:text:02",
+        "wef-grr-2024:p015:text:04",
+        "wef-grr-2024:p015:text:03",
+        "wef-grr-2024:p038:text:05",
+        "wef-grr-2024:p014:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table B.1 Survey sample composition stakeholder organization type percentages sample size n; Figure 1.5 Severity by stakeholder over the short term 2 years risks ranked",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1612.86,
+          "retrieval_ms": 1294.99,
+          "returned_ids": [
+            "wef-grr-2024:p101:text:01",
+            "wef-grr-2024:p101:text:02",
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p038:text:05"
+          ],
+          "pages": [
+            101,
+            101,
+            15,
+            15,
+            38
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 1.5 stakeholder columns short term severity top five risks private sector ranking order; Table B.1 organization sample composition n 715 48%",
+          "modality": "text",
+          "page_range": [
+            14,
+            15
+          ],
+          "llm_ms": 1580.25,
+          "retrieval_ms": 5.53,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p014:text:03",
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p014:text:04",
+            "wef-grr-2024:p015:text:01"
+          ],
+          "pages": [
+            15,
+            14,
+            15,
+            14,
+            15
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "Figure 1.5 page 15 visual stakeholder columns private sector top risks order severity short term",
+          "modality": "text",
+          "page_range": [
+            15,
+            15
+          ],
+          "llm_ms": 1446.79,
+          "retrieval_ms": 363.67,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p015:text:02",
+            "wef-grr-2024:p015:text:01",
+            "wef-grr-2024:p015:text:04"
+          ],
+          "pages": [
+            15,
+            15,
+            15,
+            15
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.5 severity by stakeholder short term 2 years private sector column ranking 1 2",
+          "modality": "text",
+          "page_range": [
+            15,
+            15
+          ],
+          "llm_ms": 1530.6,
+          "retrieval_ms": 350.89,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p015:text:01",
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p015:text:02"
+          ],
+          "pages": [
+            15,
+            15,
+            15,
+            15
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p101:text:01",
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p015:text:03"
+          ],
+          "llm_ms": 2502.64
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 5,
+      "llm_prompt_tokens": 20846,
+      "llm_completion_tokens": 411,
+      "embedding_tokens": 76,
+      "cost_usd": 0.00229162,
+      "latency_ms": 10688.75,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        101,
+        15
+      ],
+      "gold_answer": "Nhóm tổ chức lớn nhất là Private sector (48%, cỡ mẫu n=715). Hai rủi ro đứng đầu 2 năm của Private sector trong Figure 1.5 là 1st Misinformation and disinformation và 2nd Extreme weather events."
+    },
+    {
+      "query_id": "dev-mh-02",
+      "question": "Kết hợp Figure 2.4 (hoặc Figure C) và văn bản chương 2.3 (A 3°C world), rủi ro 'Critical change to Earth systems' xếp hạng mấy và điểm trung bình 10 năm là bao nhiêu trên thang 7, đồng thời 4 hệ thống hành tinh nào được nêu là có khả năng vượt ngưỡng bùng phát tại mức 1.5°C?",
+      "status": "answered",
+      "answer": "“Critical change to Earth systems” xếp hạng **thứ 2** trong khung 10 năm, với điểm trung bình **5,9 trên thang 1–7**. [wef-grr-2024:p042:text:01] Bốn hệ thống được nêu là có khả năng vượt ngưỡng ở mức 1,5°C là: **sự chết hàng loạt của rạn san hô vĩ độ thấp; sự sụp đổ của dải băng Greenland; sự sụp đổ của dải băng Tây Nam Cực; và tan băng vĩnh cửu đột ngột**. Báo cáo ghi độ tin cậy cao cho san hô và hai dải băng, trung bình cho tan băng vĩnh cửu. [wef-grr-2024:p042:text:05]",
+      "citations": [
+        "wef-grr-2024:p042:text:01",
+        "wef-grr-2024:p042:text:05"
+      ],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p042:text:01",
+        "wef-grr-2024:p042:text:03",
+        "wef-grr-2024:p042:text:05",
+        "wef-grr-2024:p044:text:01",
+        "wef-grr-2024:p042:text:02",
+        "wef-grr-2024:p043:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.4 Figure C Critical change to Earth systems 10-year average ranking 1.5°C tipping points planetary systems; section 2.3 A 3°C world",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1518.5,
+          "retrieval_ms": 440.71,
+          "returned_ids": [
+            "wef-grr-2024:p042:text:01",
+            "wef-grr-2024:p042:text:03",
+            "wef-grr-2024:p042:text:05",
+            "wef-grr-2024:p044:text:01",
+            "wef-grr-2024:p042:text:02"
+          ],
+          "pages": [
+            42,
+            42,
+            42,
+            44,
+            42
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 2.5 systems likely to tip at 1.5°C low-latitude coral reefs Greenland West Antarctic ice sheets permafrost",
+          "modality": "text",
+          "page_range": [
+            42,
+            43
+          ],
+          "llm_ms": 1652.75,
+          "retrieval_ms": 5.86,
+          "returned_ids": [
+            "wef-grr-2024:p042:text:05",
+            "wef-grr-2024:p043:text:01",
+            "wef-grr-2024:p043:text:04",
+            "wef-grr-2024:p042:text:01",
+            "wef-grr-2024:p043:text:05"
+          ],
+          "pages": [
+            42,
+            43,
+            43,
+            42,
+            43
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "Figure 2.4 severity score Critical change to Earth systems 10-year rank average 5.9",
+          "modality": "text",
+          "page_range": [
+            42,
+            42
+          ],
+          "llm_ms": 1508.94,
+          "retrieval_ms": 412.3,
+          "returned_ids": [
+            "wef-grr-2024:p042:text:01",
+            "wef-grr-2024:p042:text:03",
+            "wef-grr-2024:p042:text:02",
+            "wef-grr-2024:p042:text:05",
+            "wef-grr-2024:p042:text:04"
+          ],
+          "pages": [
+            42,
+            42,
+            42,
+            42,
+            42
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p042:text:01",
+            "wef-grr-2024:p042:text:05"
+          ],
+          "llm_ms": 2854.74
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 12808,
+      "llm_completion_tokens": 402,
+      "embedding_tokens": 58,
+      "cost_usd": 0.00148296,
+      "latency_ms": 8394.22,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        8,
+        42
+      ],
+      "gold_answer": "Xếp hạng 2 trong dài hạn 10 năm (10-year rank: 2nd) với điểm trung bình 10 năm là 5.9 (trên thang 1-7). Bốn hệ thống có khả năng chạm ngưỡng bùng phát ở mức 1.5°C là: suy thoái/chết rạn san hô vĩ độ thấp (low-latitude coral reefs die-off), sụp đổ dải băng Greenland (Greenland Ice Sheet), sụp đổ dải băng Tây Nam Cực (West Antarctic Ice Sheet) và tan băng vĩnh cửu đột ngột (abrupt thawing of permafrost)."
+    },
+    {
+      "query_id": "dev-mh-03",
+      "question": "Kết hợp phần 'Entrenched market concentration' (và Figure 2.12) với sơ đồ chuỗi giá trị Figure 2.13 (Indicative value chain of generative AI technologies), hai yếu tố rủi ro DUY NHẤT nào được người khảo sát GRPS xác định là nguyên nhân trực tiếp dẫn đến 'Adverse outcomes of AI technologies', và ở ô 'Design*' trong chuỗi giá trị AI tạo sinh hãng nào chiếm 95% thị phần chip GPU cho học máy?",
+      "status": "answered",
+      "answer": "Hai yếu tố rủi ro DUY NHẤT là **Cyber insecurity** (mất an ninh mạng) và **Technological power concentration** (tập trung quyền lực công nghệ). [wef-grr-2024:p051:text:04] Ở ô **Design*** của Figure 2.13, hãng chiếm 95% thị phần chip GPU cho học máy là **Nvidia**. [wef-grr-2024:p052:text:01]",
+      "citations": [
+        "wef-grr-2024:p051:text:04",
+        "wef-grr-2024:p052:text:01"
+      ],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p051:text:04",
+        "wef-grr-2024:p051:text:02",
+        "wef-grr-2024:p080:text:01",
+        "wef-grr-2024:p050:text:05",
+        "wef-grr-2024:p052:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "\"Entrenched market concentration\" Figure 2.12 \"Adverse outcomes of AI technologies\" Figure 2.13 Design 95% GPU chips machine learning",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1352.77,
+          "retrieval_ms": 455.27,
+          "returned_ids": [
+            "wef-grr-2024:p051:text:04",
+            "wef-grr-2024:p051:text:02",
+            "wef-grr-2024:p080:text:01",
+            "wef-grr-2024:p050:text:05",
+            "wef-grr-2024:p052:text:01"
+          ],
+          "pages": [
+            51,
+            51,
+            80,
+            50,
+            52
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 2.13 Design Nvidia 95% market share GPU chips machine learning",
+          "modality": "text",
+          "page_range": [
+            51,
+            53
+          ],
+          "llm_ms": 1598.95,
+          "retrieval_ms": 1.85,
+          "returned_ids": [
+            "wef-grr-2024:p052:text:02",
+            "wef-grr-2024:p052:text:01",
+            "wef-grr-2024:p051:text:02",
+            "wef-grr-2024:p052:text:03",
+            "wef-grr-2024:p051:text:04"
+          ],
+          "pages": [
+            52,
+            52,
+            51,
+            52,
+            51
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "\"95%\" \"GPU\" \"Design\" generative AI Nvidia",
+          "modality": "text",
+          "page_range": [
+            51,
+            53
+          ],
+          "llm_ms": 1583.49,
+          "retrieval_ms": 469.91,
+          "returned_ids": [
+            "wef-grr-2024:p052:text:02",
+            "wef-grr-2024:p052:text:01",
+            "wef-grr-2024:p051:text:04",
+            "wef-grr-2024:p051:text:02",
+            "wef-grr-2024:p053:text:04"
+          ],
+          "pages": [
+            52,
+            52,
+            51,
+            51,
+            53
+          ]
+        },
+        {
+          "event": "citation_retry",
+          "invalid_citations": [
+            "wef-grr-2024:p052:image"
+          ],
+          "llm_ms": 1985.98
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p051:text:04",
+            "wef-grr-2024:p052:text:01"
+          ],
+          "llm_ms": 1895.93
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 5,
+      "llm_prompt_tokens": 18397,
+      "llm_completion_tokens": 435,
+      "embedding_tokens": 45,
+      "cost_usd": 0.0020581,
+      "latency_ms": 9344.63,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        51,
+        52
+      ],
+      "gold_answer": "Hai rủi ro dẫn dắt duy nhất là Cyber insecurity và Technological power concentration; ở ô Design* trong Figure 2.13, Nvidia (US) chiếm 95% thị phần chip GPU dùng cho học máy."
+    },
+    {
+      "query_id": "dev-txt-01",
+      "question": "Theo phần 'Key findings' đầu báo cáo, khảo sát Global Risks Perception Survey (GRPS) được thực hiện vào thời gian nào và thu thập ý kiến của khoảng bao nhiêu chuyên gia toàn cầu?",
+      "status": "answered",
+      "answer": "Theo phần “Key findings”, GRPS thu thập ý kiến của gần 1.500 chuyên gia toàn cầu. Khảo sát GRPS 2023–2024 được thực hiện từ ngày 4 tháng 9 đến ngày 9 tháng 10 năm 2023. [wef-grr-2024:p006:text:01] [wef-grr-2024:p005:text:04]",
+      "citations": [
+        "wef-grr-2024:p006:text:01",
+        "wef-grr-2024:p005:text:04"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p005:text:04",
+        "wef-grr-2024:p006:text:01",
+        "wef-grr-2024:p005:text:01",
+        "wef-grr-2024:p004:text:02",
+        "wef-grr-2024:p005:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Key findings Global Risks Perception Survey GRPS conducted when approximately how many global experts respondents",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1423.79,
+          "retrieval_ms": 408.76,
+          "returned_ids": [
+            "wef-grr-2024:p005:text:04",
+            "wef-grr-2024:p006:text:01",
+            "wef-grr-2024:p005:text:01",
+            "wef-grr-2024:p004:text:02",
+            "wef-grr-2024:p005:text:03"
+          ],
+          "pages": [
+            5,
+            6,
+            5,
+            4,
+            5
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p006:text:01",
+            "wef-grr-2024:p005:text:04"
+          ],
+          "llm_ms": 1956.54
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 2,
+      "llm_prompt_tokens": 2603,
+      "llm_completion_tokens": 169,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00034514,
+      "latency_ms": 3789.23,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        6
+      ],
+      "gold_answer": "Khảo sát GRPS thu thập ý kiến của gần 1,500 chuyên gia toàn cầu (nearly 1,500 global experts) và được khảo sát vào tháng 9 năm 2023 (September 2023)."
+    },
+    {
+      "query_id": "dev-txt-02",
+      "question": "Theo mục 'Adaptation readiness' trong chương khí hậu, tại Australia dự báo có gần bao nhiêu ngôi nhà không thể mua bảo hiểm vào năm 2030 do rủi ro thời tiết cực đoan?",
+      "status": "answered",
+      "answer": "Theo mục “Adaptation readiness”, tại Australia dự báo gần 521.000 ngôi nhà sẽ không thể mua bảo hiểm vào năm 2030 do rủi ro thời tiết cực đoan. [wef-grr-2024:p045:text:03]",
+      "citations": [
+        "wef-grr-2024:p045:text:03"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p045:text:03",
+        "wef-grr-2024:p045:text:01",
+        "wef-grr-2024:p046:text:04",
+        "wef-grr-2024:p046:text:01",
+        "wef-grr-2024:p033:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "“Adaptation readiness” Australia homes uninsurable 2030 extreme weather",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1438.46,
+          "retrieval_ms": 392.03,
+          "returned_ids": [
+            "wef-grr-2024:p045:text:03",
+            "wef-grr-2024:p045:text:01",
+            "wef-grr-2024:p046:text:04",
+            "wef-grr-2024:p046:text:01",
+            "wef-grr-2024:p033:text:01"
+          ],
+          "pages": [
+            45,
+            45,
+            46,
+            46,
+            33
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p045:text:03"
+          ],
+          "llm_ms": 1672.34
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 2,
+      "llm_prompt_tokens": 2654,
+      "llm_completion_tokens": 124,
+      "embedding_tokens": 15,
+      "cost_usd": 0.0003277,
+      "latency_ms": 3502.96,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        45
+      ],
+      "gold_answer": "Gần 521,000 ngôi nhà (nearly 521,000 homes) ở Australia được dự báo sẽ không thể mua bảo hiểm vào năm 2030 do rủi ro thời tiết cực đoan."
+    },
+    {
+      "query_id": "dev-txt-03",
+      "question": "Theo mục 'Technological tipping points', đầu tư vào thu giữ và lưu trữ carbon (carbon capture and storage) năm 2023 đạt mức kỷ lục bao nhiêu tỷ USD, và Hoa Kỳ đã cấp bao nhiêu tỷ USD cho hai trung tâm Direct Air Capture ở hai bang nào?",
+      "status": "answered",
+      "answer": "Theo mục “Technological tipping points”, đầu tư vào thu giữ và lưu trữ carbon (CCS) đã tăng gấp đôi, đạt mức kỷ lục **6,4 tỷ USD trong năm 2023**. Hoa Kỳ đã cấp **1,2 tỷ USD** tài trợ dài hạn cho hai trung tâm Direct Air Capture ở **Texas và Louisiana**. [wef-grr-2024:p048:text:05]",
+      "citations": [
+        "wef-grr-2024:p048:text:05"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p048:text:05",
+        "wef-grr-2024:p079:text:04",
+        "wef-grr-2024:p078:text:04",
+        "wef-grr-2024:p088:text:02",
+        "wef-grr-2024:p048:text:02"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "“Technological tipping points” carbon capture and storage 2023 record investment billion two Direct Air Capture hubs United States funding states",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1364.65,
+          "retrieval_ms": 389.27,
+          "returned_ids": [
+            "wef-grr-2024:p048:text:05",
+            "wef-grr-2024:p079:text:04",
+            "wef-grr-2024:p078:text:04",
+            "wef-grr-2024:p088:text:02",
+            "wef-grr-2024:p048:text:02"
+          ],
+          "pages": [
+            48,
+            79,
+            78,
+            88,
+            48
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p048:text:05"
+          ],
+          "llm_ms": 1945.96
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 2,
+      "llm_prompt_tokens": 2607,
+      "llm_completion_tokens": 170,
+      "embedding_tokens": 25,
+      "cost_usd": 0.0003462,
+      "latency_ms": 3700.01,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        48
+      ],
+      "gold_answer": "Đầu tư vào carbon capture and storage đạt kỷ lục $6.4 billion năm 2023, và Hoa Kỳ đã cấp $1.2 billion tài trợ dài hạn cho hai trung tâm Direct Air Capture tại bang Texas và Louisiana."
+    },
+    {
+      "query_id": "dev-una-01",
+      "question": "Theo WEF Global Risks Report 2024, bảng xếp hạng Global Risks Report 2025 đặt rủi ro nào ở vị trí số 1 cho năm 2025?",
+      "status": "answered",
+      "answer": "Theo bảng xếp hạng trong WEF Global Risks Report 2024, rủi ro đứng số 1 cho năm 2025 là **Misinformation and disinformation (Thông tin sai lệch và thông tin xuyên tạc)**. [wef-grr-2024:p012:text:01]",
+      "citations": [
+        "wef-grr-2024:p012:text:01"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p006:text:01",
+        "wef-grr-2024:p098:text:02",
+        "wef-grr-2024:p012:text:01",
+        "wef-grr-2024:p038:text:01",
+        "wef-grr-2024:p041:text:02",
+        "wef-grr-2024:p019:text:01",
+        "wef-grr-2024:p062:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Global Risks Report 2025 risk ranked number 1 for 2025",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1323.84,
+          "retrieval_ms": 361.39,
+          "returned_ids": [
+            "wef-grr-2024:p006:text:01",
+            "wef-grr-2024:p098:text:02",
+            "wef-grr-2024:p012:text:01",
+            "wef-grr-2024:p038:text:01",
+            "wef-grr-2024:p041:text:02"
+          ],
+          "pages": [
+            6,
+            98,
+            12,
+            38,
+            41
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "2025 ranked first 2025 misinformation disinformation Global Risks Report 2024 Figure 1.1",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1337.27,
+          "retrieval_ms": 2.25,
+          "returned_ids": [
+            "wef-grr-2024:p019:text:01",
+            "wef-grr-2024:p062:text:04",
+            "wef-grr-2024:p014:text:04",
+            "wef-grr-2024:p016:text:01",
+            "wef-grr-2024:p038:text:01"
+          ],
+          "pages": [
+            19,
+            62,
+            14,
+            16,
+            38
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p012:text:01"
+          ],
+          "llm_ms": 1894.84
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6283,
+      "llm_completion_tokens": 176,
+      "embedding_tokens": 16,
+      "cost_usd": 0.00071662,
+      "latency_ms": 4919.92,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (WEF Global Risks Report 2024 chỉ công bố kết quả khảo sát 2023-2024, không chứa bảng xếp hạng của Global Risks Report 2025)."
+    },
+    {
+      "query_id": "dev-una-02",
+      "question": "Theo WEF Global Risks Report 2024, tỷ lệ thất nghiệp dự báo của Đức (unemployment rate in Germany) năm 2025 là bao nhiêu phần trăm?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Hai lượt tìm kiếm riêng biệt trong báo cáo không tìm thấy dự báo tỷ lệ thất nghiệp của Đức cho năm 2025. Nội dung liên quan chỉ đề cập suy giảm kinh tế Đức năm 2023 và dẫn nguồn dự báo kinh tế của Ủy ban châu Âu, không nêu tỷ lệ thất nghiệp 2025.",
+      "citations": [],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p035:text:09",
+        "wef-grr-2024:p029:text:02",
+        "wef-grr-2024:p035:text:08",
+        "wef-grr-2024:p036:text:01",
+        "wef-grr-2024:p035:text:07",
+        "wef-grr-2024:p036:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Germany unemployment rate forecast 2025 unemployment rate Germany 2025",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1286.13,
+          "retrieval_ms": 391.04,
+          "returned_ids": [
+            "wef-grr-2024:p035:text:09",
+            "wef-grr-2024:p029:text:02",
+            "wef-grr-2024:p035:text:08",
+            "wef-grr-2024:p036:text:01",
+            "wef-grr-2024:p035:text:07"
+          ],
+          "pages": [
+            35,
+            29,
+            35,
+            36,
+            35
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "\"unemployment rate\" Germany 2025 forecast",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1268.61,
+          "retrieval_ms": 0.96,
+          "returned_ids": [
+            "wef-grr-2024:p035:text:09",
+            "wef-grr-2024:p036:text:04",
+            "wef-grr-2024:p035:text:08",
+            "wef-grr-2024:p029:text:02",
+            "wef-grr-2024:p035:text:07"
+          ],
+          "pages": [
+            35,
+            36,
+            35,
+            29,
+            35
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1962.93,
+          "reason": "Hai lượt tìm kiếm riêng biệt trong báo cáo không tìm thấy dự báo tỷ lệ thất nghiệp của Đức cho năm 2025. Nội dung liên quan chỉ đề cập suy giảm kinh tế Đức năm 2023 và dẫn nguồn dự báo kinh tế của Ủy ban châu Âu, không nêu tỷ lệ thất nghiệp 2025."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 6402,
+      "llm_completion_tokens": 152,
+      "embedding_tokens": 13,
+      "cost_usd": 0.00071646,
+      "latency_ms": 4909.94,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không nêu số liệu tỷ lệ thất nghiệp dự báo của Đức)."
+    },
+    {
+      "query_id": "dev-una-03",
+      "question": "Theo WEF Global Risks Report 2024, tổng lượng phát thải Scope 3 (Scope 3 emissions) tính bằng triệu tấn CO2e của các tập đoàn công nghệ lớn là bao nhiêu?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Hai lượt tìm kiếm riêng biệt (hybrid và BM25) trong WEF Global Risks Report 2024 không tìm thấy số liệu tổng phát thải Scope 3 của các tập đoàn công nghệ lớn tính bằng triệu tấn CO2e. Các kết quả liên quan không cung cấp chỉ số này; vì vậy không thể xác định con số từ báo cáo.",
+      "citations": [],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p052:text:03",
+        "wef-grr-2024:p089:text:04",
+        "wef-grr-2024:p048:text:06",
+        "wef-grr-2024:p048:text:02",
+        "wef-grr-2024:p053:text:01",
+        "wef-grr-2024:p050:text:03",
+        "wef-grr-2024:p059:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Scope 3 emissions million tonnes CO2e large technology companies total",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1381.22,
+          "retrieval_ms": 396.93,
+          "returned_ids": [
+            "wef-grr-2024:p052:text:03",
+            "wef-grr-2024:p089:text:04",
+            "wef-grr-2024:p048:text:06",
+            "wef-grr-2024:p048:text:02",
+            "wef-grr-2024:p053:text:01"
+          ],
+          "pages": [
+            52,
+            89,
+            48,
+            48,
+            53
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "\"Scope 3\" emissions technology companies CO2e million tonnes",
+          "modality": "text",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1412.71,
+          "retrieval_ms": 1.32,
+          "returned_ids": [
+            "wef-grr-2024:p052:text:03",
+            "wef-grr-2024:p053:text:01",
+            "wef-grr-2024:p048:text:06",
+            "wef-grr-2024:p050:text:03",
+            "wef-grr-2024:p059:text:03"
+          ],
+          "pages": [
+            52,
+            53,
+            48,
+            50,
+            59
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1632.87,
+          "reason": "Hai lượt tìm kiếm riêng biệt (hybrid và BM25) trong WEF Global Risks Report 2024 không tìm thấy số liệu tổng phát thải Scope 3 của các tập đoàn công nghệ lớn tính bằng triệu tấn CO2e. Các kết quả liên quan không cung cấp chỉ số này; vì vậy không thể xác định con số từ báo cáo."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 5742,
+      "llm_completion_tokens": 159,
+      "embedding_tokens": 13,
+      "cost_usd": 0.00065396,
+      "latency_ms": 4825.31,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không đề cập số liệu phát thải Scope 3)."
+    }
+  ]
+}

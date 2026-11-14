@@ -1,0 +1,2851 @@
+{
+  "config": {
+    "name": "cfg2_multimodal_live_vision",
+    "model": "gpt-6-luna",
+    "default_mode": "hybrid",
+    "text_only": false,
+    "enable_live_vision": true,
+    "max_searches": 6,
+    "max_inspects": 4,
+    "top_k": 6,
+    "context_budget": 9000,
+    "temperature": 0.0
+  },
+  "traces": [
+    {
+      "query_id": "test-tbl-01",
+      "question": "Theo bảng Table C.2 (Top five risks identified by the Executive Opinion Survey), 5 rủi ro hàng đầu của Viet Nam theo đúng thứ tự từ 1 đến 5 là gì?",
+      "status": "answered",
+      "answer": "Theo Table C.2, 5 rủi ro hàng đầu của Việt Nam theo thứ tự là: 1. Economic downturn; 2. Infectious diseases; 3. Inflation; 4. Pollution (air, water, soil); 5. Labour shortage. [wef-grr-2024:p111:image]",
+      "citations": [
+        "wef-grr-2024:p111:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        111
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p111:visual:01",
+        "wef-grr-2024:p111:text:01",
+        "wef-grr-2024:p106:text:01",
+        "wef-grr-2024:p061:text:01",
+        "wef-grr-2024:p103:visual:01",
+        "wef-grr-2024:p105:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 Top five risks identified by the Executive Opinion Survey Viet Nam Vietnam",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1480.44,
+          "retrieval_ms": 665.65,
+          "returned_ids": [
+            "wef-grr-2024:p111:visual:01",
+            "wef-grr-2024:p111:text:01",
+            "wef-grr-2024:p106:text:01",
+            "wef-grr-2024:p061:text:01",
+            "wef-grr-2024:p103:visual:01",
+            "wef-grr-2024:p105:text:01"
+          ],
+          "pages": [
+            111,
+            111,
+            106,
+            61,
+            103,
+            105
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 111,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p111.png",
+          "citation_id": "wef-grr-2024:p111:image",
+          "llm_ms": 959.69
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p111:image"
+          ],
+          "llm_ms": 2018.42
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10585,
+      "llm_completion_tokens": 159,
+      "embedding_tokens": 16,
+      "cost_usd": 0.00113832,
+      "latency_ms": 5127.03,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        111
+      ],
+      "gold_answer": "1st: Economic downturn; 2nd: Infectious diseases; 3rd: Inflation; 4th: Pollution (air, water, soil); 5th: Labour shortage."
+    },
+    {
+      "query_id": "test-tbl-02",
+      "question": "Theo Table C.2, hãy so sánh rủi ro đứng hạng 1 (1st) và hạng 4 (4th) của Singapore so với Indonesia.",
+      "status": "answered",
+      "answer": "Theo Table C.2, Singapore và Indonesia cùng xếp **Economic downturn** ở hạng 1. Ở hạng 4, Singapore có **Geoeconomic confrontation**, còn Indonesia có **Energy supply shortage**. [wef-grr-2024:p109:image] [wef-grr-2024:p106:image]",
+      "citations": [
+        "wef-grr-2024:p109:image",
+        "wef-grr-2024:p106:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 2,
+      "inspected_pages": [
+        106,
+        109
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p106:visual:01",
+        "wef-grr-2024:p109:visual:01",
+        "wef-grr-2024:p103:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 Singapore Indonesia 1st 4th risk rankings",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1093.01,
+          "retrieval_ms": 360.82,
+          "returned_ids": [
+            "wef-grr-2024:p106:visual:01",
+            "wef-grr-2024:p109:visual:01",
+            "wef-grr-2024:p103:visual:01",
+            "wef-grr-2024:p107:visual:01",
+            "wef-grr-2024:p108:visual:01",
+            "wef-grr-2024:p106:table:01"
+          ],
+          "pages": [
+            106,
+            109,
+            103,
+            107,
+            108,
+            106
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 106,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p106.png",
+          "citation_id": "wef-grr-2024:p106:image",
+          "llm_ms": 1026.8
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 109,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p109.png",
+          "citation_id": "wef-grr-2024:p109:image",
+          "llm_ms": 1554.12
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p109:image",
+            "wef-grr-2024:p106:image"
+          ],
+          "llm_ms": 2077.39
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 17448,
+      "llm_completion_tokens": 191,
+      "embedding_tokens": 14,
+      "cost_usd": 0.00184058,
+      "latency_ms": 6118.26,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        109,
+        106
+      ],
+      "gold_answer": "Cả Singapore và Indonesia đều xếp 'Economic downturn' ở hạng 1 (1st). Ở hạng 4 (4th), Singapore xếp 'Geoeconomic confrontation' còn Indonesia xếp 'Energy supply shortage'."
+    },
+    {
+      "query_id": "test-tbl-03",
+      "question": "Theo Table C.2, trong ba quốc gia United States of America, United Kingdom và Japan, quốc gia nào KHÔNG xếp 'Economic downturn' ở vị trí số 1 (1st), và rủi ro số 1 của quốc gia đó là gì?",
+      "status": "answered",
+      "answer": "Trong ba quốc gia, **Japan** là quốc gia không xếp “Economic downturn” ở vị trí số 1. Rủi ro số 1 của Japan là **“Interstate armed conflict”**. [wef-grr-2024:p106:image]",
+      "citations": [
+        "wef-grr-2024:p106:image"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        106
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p106:table:01",
+        "wef-grr-2024:p109:table:01",
+        "wef-grr-2024:p108:table:01",
+        "wef-grr-2024:p107:table:01",
+        "wef-grr-2024:p103:table:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 United States of America United Kingdom Japan Economic downturn 1st country risk ranking",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1356.8,
+          "retrieval_ms": 495.1,
+          "returned_ids": [
+            "wef-grr-2024:p110:visual:01",
+            "wef-grr-2024:p110:table:01",
+            "wef-grr-2024:p106:table:01",
+            "wef-grr-2024:p103:visual:01",
+            "wef-grr-2024:p103:table:01",
+            "wef-grr-2024:p106:visual:01"
+          ],
+          "pages": [
+            110,
+            110,
+            106,
+            103,
+            103,
+            106
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Japan Table C.2 top five risks Japan 1st Economic downturn",
+          "modality": "table",
+          "page_range": [
+            106,
+            110
+          ],
+          "llm_ms": 1365.93,
+          "retrieval_ms": 4.42,
+          "returned_ids": [
+            "wef-grr-2024:p106:table:01",
+            "wef-grr-2024:p109:table:01",
+            "wef-grr-2024:p108:table:01",
+            "wef-grr-2024:p107:table:01",
+            "wef-grr-2024:p110:table:01"
+          ],
+          "pages": [
+            106,
+            109,
+            108,
+            107,
+            110
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 106,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p106.png",
+          "citation_id": "wef-grr-2024:p106:image",
+          "llm_ms": 1061.74
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p106:image"
+          ],
+          "llm_ms": 1695.76
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 19482,
+      "llm_completion_tokens": 199,
+      "embedding_tokens": 19,
+      "cost_usd": 0.00204808,
+      "latency_ms": 5982.41,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        106,
+        110
+      ],
+      "gold_answer": "Japan không xếp 'Economic downturn' ở vị trí số 1 (Economic downturn ở Japan đứng thứ 3); rủi ro số 1 (1st) của Japan là 'Interstate armed conflict' (trong khi cả US và UK đều xếp 'Economic downturn' ở 1st)."
+    },
+    {
+      "query_id": "test-tbl-04",
+      "question": "Theo bảng xếp hạng toàn bộ 34 rủi ro Figure E (Global risks ranked by severity), hãy liệt kê 3 rủi ro đứng cao nhất ở khung dài hạn 10 năm (Long term) và thứ hạng tương ứng của từng rủi ro đó ở khung ngắn hạn 2 năm (Short term).",
+      "status": "answered",
+      "answer": "Ba rủi ro đứng cao nhất ở khung dài hạn 10 năm và thứ hạng tương ứng ở khung ngắn hạn 2 năm là:\n\n1. **Extreme weather events** — dài hạn **1st**; ngắn hạn **2nd**.\n2. **Critical change to Earth systems** — dài hạn **2nd**; ngắn hạn **11th**.\n3. **Biodiversity loss and ecosystem collapse** — dài hạn **3rd**; ngắn hạn **20th**. [wef-grr-2024:p011:image]",
+      "citations": [
+        "wef-grr-2024:p011:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        11
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p008:visual:01",
+        "wef-grr-2024:p038:visual:01",
+        "wef-grr-2024:p011:visual:01",
+        "wef-grr-2024:p014:visual:01",
+        "wef-grr-2024:p100:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure E Global risks ranked by severity Long term 10 years Short term 2 years all 34 risks",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1328.1,
+          "retrieval_ms": 375.5,
+          "returned_ids": [
+            "wef-grr-2024:p008:visual:01",
+            "wef-grr-2024:p038:visual:01",
+            "wef-grr-2024:p011:visual:01",
+            "wef-grr-2024:p014:visual:01",
+            "wef-grr-2024:p037:visual:01",
+            "wef-grr-2024:p100:visual:01"
+          ],
+          "pages": [
+            8,
+            38,
+            11,
+            14,
+            37,
+            100
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 11,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p011.png",
+          "citation_id": "wef-grr-2024:p011:image",
+          "llm_ms": 1162.89
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p011:image"
+          ],
+          "llm_ms": 1866.36
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10356,
+      "llm_completion_tokens": 224,
+      "embedding_tokens": 21,
+      "cost_usd": 0.00114802,
+      "latency_ms": 4737.94,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        11
+      ],
+      "gold_answer": "Long-term 1st: Extreme weather events (Short-term: 2nd); Long-term 2nd: Critical change to Earth systems (Short-term: 11th); Long-term 3rd: Biodiversity loss and ecosystem collapse (Short-term: 20th)."
+    },
+    {
+      "query_id": "test-tbl-05",
+      "question": "Theo bảng Figure 1.4 (Annual change in global risk perceptions over the short term), 4 rủi ro trong nhóm 'Biggest increase in ranking' là những rủi ro nào, đứng hạng mấy năm nay và tăng bao nhiêu bậc?",
+      "status": "answered",
+      "answer": "Bốn rủi ro trong nhóm “Biggest increase in ranking” là:\n- **Technological power concentration** — hạng **12**, tăng **17 bậc**.\n- **Misinformation and disinformation** — hạng **1**, tăng **15 bậc**.\n- **Interstate armed conflict** — hạng **5**, tăng **9 bậc**.\n- **Insufficient public infrastructure and services** — hạng **18**, tăng **9 bậc**. [wef-grr-2024:p015:image]",
+      "citations": [
+        "wef-grr-2024:p015:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        15
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p015:text:01",
+        "wef-grr-2024:p015:visual:01",
+        "wef-grr-2024:p038:text:04",
+        "wef-grr-2024:p038:text:01",
+        "wef-grr-2024:p016:text:02",
+        "wef-grr-2024:p012:text:02"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.4 Annual change in global risk perceptions over the short term Biggest increase in ranking",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1136.48,
+          "retrieval_ms": 417.1,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:01",
+            "wef-grr-2024:p015:visual:01",
+            "wef-grr-2024:p038:text:04",
+            "wef-grr-2024:p038:text:01",
+            "wef-grr-2024:p016:text:02",
+            "wef-grr-2024:p012:text:02"
+          ],
+          "pages": [
+            15,
+            15,
+            38,
+            38,
+            16,
+            12
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 15,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p015.png",
+          "citation_id": "wef-grr-2024:p015:image",
+          "llm_ms": 1239.36
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p015:image"
+          ],
+          "llm_ms": 2145.29
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10084,
+      "llm_completion_tokens": 214,
+      "embedding_tokens": 19,
+      "cost_usd": 0.00111578,
+      "latency_ms": 4943.8,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        15
+      ],
+      "gold_answer": "1) Technological power concentration (12th, tăng 17 bậc / ↑17); 2) Misinformation and disinformation (1st, tăng 15 bậc / ↑15); 3) Interstate armed conflict (5th, tăng 9 bậc / ↑9); 4) Insufficient public infrastructure and services (18th, tăng 9 bậc / ↑9)."
+    },
+    {
+      "query_id": "test-tbl-06",
+      "question": "Theo bảng Table A.1 (Definitions of global risks), rủi ro 'Adverse outcomes of frontier technologies' thuộc danh mục lớn nào và phần định nghĩa nêu rõ những ví dụ công nghệ cụ thể nào?",
+      "status": "answered",
+      "answer": "Theo Table A.1, “Adverse outcomes of frontier technologies” thuộc danh mục lớn **TECHNOLOGICAL**. Phần tên mục nêu trong ngoặc các ví dụ “quantum, biotech, geoengineering”; định nghĩa nói đây là những hậu quả tiêu cực có chủ ý hoặc ngoài ý muốn từ tiến bộ trong các công nghệ tiên phong, và liệt kê cụ thể: **brain-computer interfaces, biotechnology, geo-engineering và quantum computing**. [wef-grr-2024:p097:image]",
+      "citations": [
+        "wef-grr-2024:p097:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        97
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p037:text:01",
+        "wef-grr-2024:p051:text:01",
+        "wef-grr-2024:p088:text:01",
+        "wef-grr-2024:p093:text:01",
+        "wef-grr-2024:p097:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table A.1 Definitions of global risks “Adverse outcomes of frontier technologies” category definition examples technologies",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1377.81,
+          "retrieval_ms": 390.2,
+          "returned_ids": [
+            "wef-grr-2024:p037:text:01",
+            "wef-grr-2024:p051:text:01",
+            "wef-grr-2024:p088:text:01",
+            "wef-grr-2024:p093:text:01",
+            "wef-grr-2024:p097:visual:01",
+            "wef-grr-2024:p017:text:01"
+          ],
+          "pages": [
+            37,
+            51,
+            88,
+            93,
+            97,
+            17
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 97,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p097.png",
+          "citation_id": "wef-grr-2024:p097:image",
+          "llm_ms": 917.8
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p097:image"
+          ],
+          "llm_ms": 2381.59
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9383,
+      "llm_completion_tokens": 202,
+      "embedding_tokens": 20,
+      "cost_usd": 0.0010397,
+      "latency_ms": 5073.1,
+      "category": "Bảng",
+      "answerable": true,
+      "evidence_pages": [
+        97
+      ],
+      "gold_answer": "Thuộc nhóm TECHNOLOGICAL; định nghĩa nêu các ví dụ gồm: brain-computer interfaces (giao diện não-máy tính), biotechnology (công nghệ sinh học), geo-engineering (địa kỹ thuật) và quantum computing (máy tính lượng tử)."
+    },
+    {
+      "query_id": "test-vis-01",
+      "question": "Theo sơ đồ chuỗi giá trị AI tạo sinh Figure 2.13 (Indicative value chain of generative AI technologies), ở khâu quang khắc 'Lithography*' hai hãng nào được đề cập và thị phần toàn cầu của ASML là bao nhiêu?",
+      "status": "answered",
+      "answer": "Ở khâu “Lithography*” có hai hãng được nêu là **ASML (Netherlands)** và **Canon (Japan)**. Báo cáo nói ASML reportedly holds **90% of the global lithography market** (90% thị phần toàn cầu). [wef-grr-2024:p052:image]",
+      "citations": [
+        "wef-grr-2024:p052:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        52
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p052:visual:01",
+        "wef-grr-2024:p050:visual:01",
+        "wef-grr-2024:p088:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.13 Indicative value chain of generative AI technologies Lithography* ASML global market share",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1381.46,
+          "retrieval_ms": 503.16,
+          "returned_ids": [
+            "wef-grr-2024:p052:visual:01",
+            "wef-grr-2024:p050:visual:01",
+            "wef-grr-2024:p088:visual:01",
+            "wef-grr-2024:p056:visual:01",
+            "wef-grr-2024:p051:visual:01",
+            "wef-grr-2024:p070:visual:01"
+          ],
+          "pages": [
+            52,
+            50,
+            88,
+            56,
+            51,
+            70
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 52,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p052.png",
+          "citation_id": "wef-grr-2024:p052:image",
+          "llm_ms": 1073.28
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p052:image"
+          ],
+          "llm_ms": 1831.98
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9233,
+      "llm_completion_tokens": 168,
+      "embedding_tokens": 23,
+      "cost_usd": 0.00100776,
+      "latency_ms": 4792.64,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        52
+      ],
+      "gold_answer": "ASML (Netherlands) được nêu nắm giữ 90% thị trường quang khắc toàn cầu, bên cạnh Canon (Japan) công bố dòng máy mới có thể sản xuất chip tiên tiến 2-5nm."
+    },
+    {
+      "query_id": "test-vis-02",
+      "question": "Theo sơ đồ Figure 2.13 (Indicative value chain of generative AI technologies), ở hai khâu 'Fabrication*' và 'Computational power', những công ty dẫn đầu nào được nêu tên và thị phần của từng công ty trên sơ đồ là bao nhiêu?",
+      "status": "answered",
+      "answer": "Ở khâu **Fabrication***, sơ đồ nêu **Taiwan Semiconductor Manufacturing Company (TSMC)** với khoảng **56%** thị phần toàn cầu của thị trường foundry bán dẫn; tiếp theo là **Samsung** với gần **12%**. [wef-grr-2024:p052:image]\n\nỞ khâu **Computational power**, sơ đồ nêu **Amazon (US)** với khoảng **32%** thị phần, tiếp theo là **Microsoft (US)** với **22%**. [wef-grr-2024:p052:image]",
+      "citations": [
+        "wef-grr-2024:p052:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        52
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p052:text:01",
+        "wef-grr-2024:p080:text:01",
+        "wef-grr-2024:p054:text:03",
+        "wef-grr-2024:p051:text:04",
+        "wef-grr-2024:p055:text:04",
+        "wef-grr-2024:p052:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.13 Indicative value chain of generative AI technologies Fabrication Computational power market share",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1236.45,
+          "retrieval_ms": 420.16,
+          "returned_ids": [
+            "wef-grr-2024:p052:text:01",
+            "wef-grr-2024:p080:text:01",
+            "wef-grr-2024:p054:text:03",
+            "wef-grr-2024:p051:text:04",
+            "wef-grr-2024:p055:text:04",
+            "wef-grr-2024:p052:text:03"
+          ],
+          "pages": [
+            52,
+            80,
+            54,
+            51,
+            55,
+            52
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 52,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p052.png",
+          "citation_id": "wef-grr-2024:p052:image",
+          "llm_ms": 1089.27
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p052:image"
+          ],
+          "llm_ms": 2205.86
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9045,
+      "llm_completion_tokens": 213,
+      "embedding_tokens": 21,
+      "cost_usd": 0.00101142,
+      "latency_ms": 4955.32,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        52
+      ],
+      "gold_answer": "Ở khâu Fabrication*: TSMC nắm khoảng 56% thị phần đúc chip bán dẫn toàn cầu, theo sau là Samsung khoảng gần 12%. Ở khâu Computational power: Amazon (US) nắm khoảng 32% thị phần điện toán đám mây, theo sau là Microsoft (US) ở mức 22%."
+    },
+    {
+      "query_id": "test-vis-03",
+      "question": "Theo hai bản đồ thế giới song song Figure 1.16 (National risk perceptions: Economic downturn), bảng A và bảng B thể hiện hai tên rủi ro và năm nào, và thang màu chú giải 'Rank' bên dưới bản đồ có phạm vi từ hạng mấy đến hạng mấy?",
+      "status": "answered",
+      "answer": "Bản đồ A ghi “Prolonged economic stagnation, 2022”; bản đồ B ghi “Economic downturn, 2023”. Chú giải “Rank” chạy từ hạng 1st đến 36th (các mốc hiển thị: 1st, 10th, 20th, 30th, 36th). [wef-grr-2024:p028:image]",
+      "citations": [
+        "wef-grr-2024:p028:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        28
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p028:visual:01",
+        "wef-grr-2024:p027:visual:01",
+        "wef-grr-2024:p061:visual:01",
+        "wef-grr-2024:p016:visual:01",
+        "wef-grr-2024:p103:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.16 National risk perceptions Economic downturn bảng A bảng B Rank legend",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1378.32,
+          "retrieval_ms": 566.0,
+          "returned_ids": [
+            "wef-grr-2024:p028:visual:01",
+            "wef-grr-2024:p027:visual:01",
+            "wef-grr-2024:p061:visual:01",
+            "wef-grr-2024:p016:visual:01",
+            "wef-grr-2024:p103:visual:01",
+            "wef-grr-2024:p067:visual:01"
+          ],
+          "pages": [
+            28,
+            27,
+            61,
+            16,
+            103,
+            67
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 28,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p028.png",
+          "citation_id": "wef-grr-2024:p028:image",
+          "llm_ms": 1086.75
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p028:image"
+          ],
+          "llm_ms": 2567.8
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10601,
+      "llm_completion_tokens": 182,
+      "embedding_tokens": 20,
+      "cost_usd": 0.0011515,
+      "latency_ms": 5612.22,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        28
+      ],
+      "gold_answer": "Bảng A thể hiện 'Prolonged economic stagnation, 2022' và bảng B thể hiện 'Economic downturn, 2023'; thanh chú giải màu 'Rank' chạy từ 1st (đỏ đậm nhất) đến 36th (vàng nhạt nhất), với các mốc nhãn 1st, 10th, 20th, 30th, 36th."
+    },
+    {
+      "query_id": "test-vis-04",
+      "question": "Theo đồ thị mạng lưới liên kết rủi ro Figure 1.10 (Risk interconnections: Misinformation and disinformation), nút tròn màu đỏ kích thước lớn nổi bật ở phía dưới tâm nối mật độ cao với 'Misinformation and disinformation' là rủi ro nào, và 3 nút màu cam (Geopolitical) xuất hiện trong đồ thị này là những rủi ro nào?",
+      "status": "answered",
+      "answer": "Nút tròn đỏ lớn nổi bật phía dưới tâm là **Societal polarization**. Ba nút màu cam (nhóm **Geopolitical**) là **Intrastate violence**, **Terrorist attacks** và **Interstate armed conflict**. [wef-grr-2024:p021:image]",
+      "citations": [
+        "wef-grr-2024:p021:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        21
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p021:visual:01",
+        "wef-grr-2024:p070:visual:01",
+        "wef-grr-2024:p051:visual:01",
+        "wef-grr-2024:p017:visual:01",
+        "wef-grr-2024:p009:visual:01",
+        "wef-grr-2024:p059:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.10 Risk interconnections Misinformation and disinformation network nodes geopolitical orange",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1322.23,
+          "retrieval_ms": 356.36,
+          "returned_ids": [
+            "wef-grr-2024:p021:visual:01",
+            "wef-grr-2024:p070:visual:01",
+            "wef-grr-2024:p051:visual:01",
+            "wef-grr-2024:p017:visual:01",
+            "wef-grr-2024:p009:visual:01",
+            "wef-grr-2024:p059:visual:01"
+          ],
+          "pages": [
+            21,
+            70,
+            51,
+            17,
+            9,
+            59
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 21,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p021.png",
+          "citation_id": "wef-grr-2024:p021:image",
+          "llm_ms": 1122.17
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p021:image"
+          ],
+          "llm_ms": 1818.28
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9878,
+      "llm_completion_tokens": 162,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00106914,
+      "latency_ms": 4623.28,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        21
+      ],
+      "gold_answer": "Nút tròn màu đỏ kích thước lớn nổi bật là 'Societal polarization'; ba nút màu cam (Geopolitical) trong Figure 1.10 là 'Intrastate violence', 'Terrorist attacks' và 'Interstate armed conflict'."
+    },
+    {
+      "query_id": "test-vis-05",
+      "question": "Theo bản đồ liên kết tổng thể Figure D (Global risks landscape: an interconnections map), chú giải bên trái quy ước kích thước nút ('Nodes') và độ dày đường nối ('Edges') đại diện cho đại lượng gì, và năm màu thanh dọc trong 'Risk categories' tương ứng với 5 nhóm rủi ro nào?",
+      "status": "answered",
+      "answer": "Trong Figure D, kích thước nút (Nodes) biểu thị **Risk influence** (mức ảnh hưởng của rủi ro; chú giải phân mức High, Medium, Low), còn độ dày đường nối (Edges) biểu thị **Relative influence** (ảnh hưởng tương đối; High, Medium, Low). Năm màu trong “Risk categories” lần lượt là: **Economic** (xanh dương), **Environmental** (xanh lá), **Geopolitical** (cam), **Societal** (đỏ) và **Technological** (tím). [wef-grr-2024:p009:image]",
+      "citations": [
+        "wef-grr-2024:p009:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        9
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p017:visual:01",
+        "wef-grr-2024:p009:visual:01",
+        "wef-grr-2024:p059:visual:01",
+        "wef-grr-2024:p100:visual:01",
+        "wef-grr-2024:p070:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure D Global risks landscape an interconnections map legend Nodes Edges Risk categories five colors",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1460.52,
+          "retrieval_ms": 605.37,
+          "returned_ids": [
+            "wef-grr-2024:p017:visual:01",
+            "wef-grr-2024:p009:visual:01",
+            "wef-grr-2024:p059:visual:01",
+            "wef-grr-2024:p100:visual:01",
+            "wef-grr-2024:p070:visual:01",
+            "wef-grr-2024:p021:visual:01"
+          ],
+          "pages": [
+            17,
+            9,
+            59,
+            100,
+            70,
+            21
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 9,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p009.png",
+          "citation_id": "wef-grr-2024:p009:image",
+          "llm_ms": 1161.0
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p009:image"
+          ],
+          "llm_ms": 2572.84
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9551,
+      "llm_completion_tokens": 229,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00106994,
+      "latency_ms": 5805.14,
+      "category": "Ảnh, sơ đồ",
+      "answerable": true,
+      "evidence_pages": [
+        9
+      ],
+      "gold_answer": "Kích thước nút (Nodes) biểu diễn mức độ ảnh hưởng của rủi ro ('Risk influence': High, Medium, Low), độ dày cạnh nối (Edges) biểu diễn mức độ ảnh hưởng tương đối ('Relative influence': High, Medium, Low). Năm màu thanh dọc trong 'Risk categories' gồm: xanh dương (Economic), xanh lá (Environmental), cam (Geopolitical), đỏ (Societal) và tím (Technological)."
+    },
+    {
+      "query_id": "test-cht-01",
+      "question": "Theo biểu đồ cột chồng ngang Figure A (Short and long-term global outlook), tỷ lệ % chuyên gia đánh giá triển vọng thế giới ở hai mức bi quan nhất ('Stormy' và 'Turbulent') thay đổi như thế nào từ ngắn hạn 2 năm sang dài hạn 10 năm?",
+      "status": "answered",
+      "answer": "Tỷ lệ cộng gộp ở hai mức bi quan nhất tăng rõ rệt: trong ngắn hạn 2 năm, “Stormy” 3% + “Turbulent” 27% = 30%; trong dài hạn 10 năm, “Stormy” 17% + “Turbulent” 46% = 63%. Như vậy, tỷ lệ tăng 33 điểm phần trăm. [wef-grr-2024:p006:image]",
+      "citations": [
+        "wef-grr-2024:p006:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        6
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p012:visual:01",
+        "wef-grr-2024:p006:visual:01",
+        "wef-grr-2024:p037:visual:01",
+        "wef-grr-2024:p008:visual:01",
+        "wef-grr-2024:p027:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure A Short and long-term global outlook Stormy Turbulent 2 years 10 years stacked bar percentage",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1445.51,
+          "retrieval_ms": 475.48,
+          "returned_ids": [
+            "wef-grr-2024:p012:visual:01",
+            "wef-grr-2024:p006:visual:01",
+            "wef-grr-2024:p037:visual:01",
+            "wef-grr-2024:p008:visual:01",
+            "wef-grr-2024:p011:visual:01",
+            "wef-grr-2024:p027:visual:01"
+          ],
+          "pages": [
+            12,
+            6,
+            37,
+            8,
+            11,
+            27
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 6,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p006.png",
+          "citation_id": "wef-grr-2024:p006:image",
+          "llm_ms": 1179.21
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p006:image"
+          ],
+          "llm_ms": 2511.4
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10352,
+      "llm_completion_tokens": 200,
+      "embedding_tokens": 22,
+      "cost_usd": 0.00113564,
+      "latency_ms": 5617.66,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        6
+      ],
+      "gold_answer": "Ở ngắn hạn 2 năm: Stormy là 3% và Turbulent là 27% (tổng 30%). Ở dài hạn 10 năm: Stormy tăng lên 17% và Turbulent tăng lên 46% (tổng 63%)."
+    },
+    {
+      "query_id": "test-cht-02",
+      "question": "Theo 5 biểu đồ donut của Figure B (Current risk landscape), hãy nêu chính xác tên 5 rủi ro hàng đầu và tỷ lệ phần trăm tương ứng trong biểu đồ.",
+      "status": "answered",
+      "answer": "Năm rủi ro hàng đầu trong Figure B (Current risk landscape), theo thứ hạng, là: 1) Extreme weather — 66%; 2) AI-generated misinformation and disinformation — 53%; 3) Societal and/or political polarization — 46%; 4) Cost-of-living crisis — 42%; 5) Cyberattacks — 39%. [wef-grr-2024:p007:image]",
+      "citations": [
+        "wef-grr-2024:p007:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        7
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p007:visual:01",
+        "wef-grr-2024:p067:visual:01",
+        "wef-grr-2024:p100:visual:01",
+        "wef-grr-2024:p101:visual:01",
+        "wef-grr-2024:p056:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure B Current risk landscape five donut charts top risks percentage",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1257.51,
+          "retrieval_ms": 514.77,
+          "returned_ids": [
+            "wef-grr-2024:p007:visual:01",
+            "wef-grr-2024:p067:visual:01",
+            "wef-grr-2024:p100:visual:01",
+            "wef-grr-2024:p101:visual:01",
+            "wef-grr-2024:p056:visual:01",
+            "wef-grr-2024:p013:visual:01"
+          ],
+          "pages": [
+            7,
+            67,
+            100,
+            101,
+            56,
+            13
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 7,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p007.png",
+          "citation_id": "wef-grr-2024:p007:image",
+          "llm_ms": 1303.14
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p007:image"
+          ],
+          "llm_ms": 2035.33
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9978,
+      "llm_completion_tokens": 183,
+      "embedding_tokens": 12,
+      "cost_usd": 0.00108954,
+      "latency_ms": 5117.5,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        7
+      ],
+      "gold_answer": "1st: Extreme weather (66%); 2nd: AI-generated misinformation and disinformation (53%); 3rd: Societal and/or political polarization (46%); 4th: Cost-of-living crisis (42%); 5th: Cyberattacks (39%)."
+    },
+    {
+      "query_id": "test-cht-03",
+      "question": "Theo 3 biểu đồ radar Figure 2.23 (Risk governance: End of development?), hai ký hiệu Approach 'b' và Approach 'f' là những cách tiếp cận quản trị nào và đạt bao nhiêu phần trăm đối với rủi ro 'Unemployment'?",
+      "status": "answered",
+      "answer": "Trong Figure 2.23, Approach **b** là **National and local regulations** (quy định quốc gia và địa phương), đạt **47%** đối với rủi ro **Unemployment**. Approach **f** là **Corporate strategies** (chiến lược doanh nghiệp), đạt **52%**. [wef-grr-2024:p067:image]",
+      "citations": [
+        "wef-grr-2024:p067:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        67
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p067:visual:01",
+        "wef-grr-2024:p056:visual:01",
+        "wef-grr-2024:p049:visual:01",
+        "wef-grr-2024:p093:visual:01",
+        "wef-grr-2024:p112:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.23 Risk governance End of development radar Approach b Approach f Unemployment",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1319.8,
+          "retrieval_ms": 448.92,
+          "returned_ids": [
+            "wef-grr-2024:p067:visual:01",
+            "wef-grr-2024:p056:visual:01",
+            "wef-grr-2024:p049:visual:01",
+            "wef-grr-2024:p093:visual:01",
+            "wef-grr-2024:p075:visual:01",
+            "wef-grr-2024:p112:visual:01"
+          ],
+          "pages": [
+            67,
+            56,
+            49,
+            93,
+            75,
+            112
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 67,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p067.png",
+          "citation_id": "wef-grr-2024:p067:image",
+          "llm_ms": 1040.01
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p067:image"
+          ],
+          "llm_ms": 2140.02
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10080,
+      "llm_completion_tokens": 175,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00109584,
+      "latency_ms": 4955.41,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        67
+      ],
+      "gold_answer": "Approach b là 'National and local regulations' đạt 47%, và Approach f là 'Corporate strategies' đạt 52% đối với rủi ro Unemployment."
+    },
+    {
+      "query_id": "test-cht-04",
+      "question": "Theo biểu đồ đường hai trục tung Figure 1.12 (Incidence and impact of state-based armed conflict, 2007-2022), hai trục tung bên trái và bên phải biểu diễn chỉ số gì, và tại năm 2022 đường 'Total state-based armed conflicts' và 'State-based armed conflict fatalities' ở khoảng giá trị nào?",
+      "status": "answered",
+      "answer": "Trục tung bên trái biểu diễn **số lượng xung đột** (No. of conflicts); trục tung bên phải biểu diễn **số người tử vong do xung đột** (No. of conflict fatalities), với thang bên phải ghi theo nghìn (k). Năm 2022, đường **Total state-based armed conflicts** ở khoảng **55 xung đột**, còn **State-based armed conflict fatalities** ở khoảng **200.000 ca tử vong (200k)**. [wef-grr-2024:p023:image]",
+      "citations": [
+        "wef-grr-2024:p023:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        23
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p023:visual:01",
+        "wef-grr-2024:p025:visual:01",
+        "wef-grr-2024:p074:visual:01",
+        "wef-grr-2024:p015:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.12 Incidence and impact of state-based armed conflict 2007-2022 left right axis Total state-based armed conflicts fatalities",
+          "modality": "visual",
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1247.1,
+          "retrieval_ms": 388.14,
+          "returned_ids": [
+            "wef-grr-2024:p023:visual:01",
+            "wef-grr-2024:p025:visual:01",
+            "wef-grr-2024:p074:visual:01",
+            "wef-grr-2024:p015:visual:01",
+            "wef-grr-2024:p022:visual:01",
+            "wef-grr-2024:p011:visual:01"
+          ],
+          "pages": [
+            23,
+            25,
+            74,
+            15,
+            22,
+            11
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 23,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p023.png",
+          "citation_id": "wef-grr-2024:p023:image",
+          "llm_ms": 927.85
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p023:image"
+          ],
+          "llm_ms": 2391.14
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 10232,
+      "llm_completion_tokens": 227,
+      "embedding_tokens": 29,
+      "cost_usd": 0.00113728,
+      "latency_ms": 4960.15,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        23
+      ],
+      "gold_answer": "Trục tung bên trái biểu diễn 'No. of conflicts' (thang 0-60) và trục tung bên phải biểu diễn 'No. of conflict fatalities' (thang 0-240k). Vào năm 2022, 'Total state-based armed conflicts' ở khoảng ~55-56 cuộc xung đột (trên vạch 50, gần 60), còn 'State-based armed conflict fatalities' tăng vọt vượt mốc 200k người thiệt mạng (xấp xỉ ~200k-205k)."
+    },
+    {
+      "query_id": "test-cht-05",
+      "question": "Theo biểu đồ thanh ngang Figure 3.4 (Top global risks addressed by Global treaties and agreements), ba rủi ro nhóm Địa chính trị (màu cam) dẫn đầu biểu đồ gồm những rủi ro nào và tỷ lệ phần trăm từng rủi ro là bao nhiêu?",
+      "status": "answered",
+      "answer": "Ba rủi ro Địa chính trị (màu cam) đứng đầu Figure 3.4 là: **Biological, chemical or nuclear hazards — 84%**; **Geoeconomic confrontation — 79%**; và **Interstate armed conflict — 78%**. [wef-grr-2024:p091:image]",
+      "citations": [
+        "wef-grr-2024:p091:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        91
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p091:visual:01",
+        "wef-grr-2024:p113:visual:01",
+        "wef-grr-2024:p091:text:01",
+        "wef-grr-2024:p112:visual:01",
+        "wef-grr-2024:p091:text:02"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 3.4 Top global risks addressed by Global treaties and agreements geopolitical orange percentages",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1263.05,
+          "retrieval_ms": 435.72,
+          "returned_ids": [
+            "wef-grr-2024:p091:visual:01",
+            "wef-grr-2024:p113:visual:01",
+            "wef-grr-2024:p091:text:01",
+            "wef-grr-2024:p112:visual:01",
+            "wef-grr-2024:p114:visual:01",
+            "wef-grr-2024:p091:text:02"
+          ],
+          "pages": [
+            91,
+            113,
+            91,
+            112,
+            114,
+            91
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 91,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p091.png",
+          "citation_id": "wef-grr-2024:p091:image",
+          "llm_ms": 1099.51
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p091:image"
+          ],
+          "llm_ms": 1975.88
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 9410,
+      "llm_completion_tokens": 164,
+      "embedding_tokens": 17,
+      "cost_usd": 0.00102334,
+      "latency_ms": 4780.22,
+      "category": "Biểu đồ",
+      "answerable": true,
+      "evidence_pages": [
+        91
+      ],
+      "gold_answer": "1st: Biological, chemical or nuclear hazards (84%); 2nd: Geoeconomic confrontation (79%); 3rd: Interstate armed conflict (78%)."
+    },
+    {
+      "query_id": "test-mh-01",
+      "question": "Kết hợp Table C.2 và biểu đồ Figure 2.7 (Adaptation readiness): đối với Viet Nam, rủi ro Môi trường duy nhất lọt vào Top 5 của Table C.2 là rủi ro gì (đứng thứ mấy), và trên trục hoành 'Risk ranking' của rủi ro 'Failure to adapt to climate change' trong Figure 2.7 thì Viet Nam nằm ở khoảng thứ hạng nào?",
+      "status": "answered",
+      "answer": "Trong Table C.2, rủi ro Môi trường duy nhất của Viet Nam trong Top 5 là **Pollution (air, water, soil)**, xếp **thứ 4**. [wef-grr-2024:p111:image] Trên Figure 2.7, điểm Viet Nam nằm khoảng **thứ hạng 17** trên trục hoành “Risk ranking” (giữa mốc 10th và 20th, gần 17th). [wef-grr-2024:p045:image]",
+      "citations": [
+        "wef-grr-2024:p111:image",
+        "wef-grr-2024:p045:image"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 2,
+      "inspected_pages": [
+        45,
+        111
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p045:visual:01",
+        "wef-grr-2024:p045:text:01",
+        "wef-grr-2024:p045:text:05",
+        "wef-grr-2024:p043:text:03",
+        "wef-grr-2024:p045:text:04",
+        "wef-grr-2024:p078:text:02",
+        "wef-grr-2024:p111:visual:01",
+        "wef-grr-2024:p111:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table C.2 Viet Nam environmental risks Top 5 ranking",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1385.66,
+          "retrieval_ms": 520.79,
+          "returned_ids": [
+            "wef-grr-2024:p111:visual:01",
+            "wef-grr-2024:p111:text:01",
+            "wef-grr-2024:p103:visual:01",
+            "wef-grr-2024:p061:text:01",
+            "wef-grr-2024:p071:text:04",
+            "wef-grr-2024:p045:text:04"
+          ],
+          "pages": [
+            111,
+            111,
+            103,
+            61,
+            71,
+            45
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 2.7 Adaptation readiness Failure to adapt to climate change Risk ranking Viet Nam",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1201.87,
+          "retrieval_ms": 504.94,
+          "returned_ids": [
+            "wef-grr-2024:p045:visual:01",
+            "wef-grr-2024:p045:text:01",
+            "wef-grr-2024:p045:text:05",
+            "wef-grr-2024:p043:text:03",
+            "wef-grr-2024:p045:text:04",
+            "wef-grr-2024:p078:text:02"
+          ],
+          "pages": [
+            45,
+            45,
+            45,
+            43,
+            45,
+            78
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 45,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p045.png",
+          "citation_id": "wef-grr-2024:p045:image",
+          "llm_ms": 1088.95
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 111,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p111.png",
+          "citation_id": "wef-grr-2024:p111:image",
+          "llm_ms": 1402.45
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p111:image",
+            "wef-grr-2024:p045:image"
+          ],
+          "llm_ms": 3077.21
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 5,
+      "llm_prompt_tokens": 30536,
+      "llm_completion_tokens": 273,
+      "embedding_tokens": 30,
+      "cost_usd": 0.0031907,
+      "latency_ms": 9185.61,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        111,
+        45
+      ],
+      "gold_answer": "Trong Table C.2 của Viet Nam, rủi ro Môi trường duy nhất trong Top 5 là 'Pollution (air, water, soil)' ở vị trí thứ 4 (4th). Trên biểu đồ Figure 2.7 (khu vực South-eastern Asia), Viet Nam nằm quanh vị trí xếp hạng khoảng thứ 17 (khoảng 16th-18th) trên trục 'Failure to adapt to climate change'."
+    },
+    {
+      "query_id": "test-mh-02",
+      "question": "Kết hợp Table B.1 (Survey sample composition) và Figure 1.5 (Severity by stakeholder), hai khu vực có tỷ trọng người trả lời cao nhất trong Table B.1 chiếm lần lượt bao nhiêu phần trăm, và trong Figure 1.5 hai nhóm bên liên quan (stakeholder group) nào có cỡ mẫu nhỏ nhất (nêu số lượng n và tỷ lệ %)?",
+      "status": "answered",
+      "answer": "Trong Table B.1, hai khu vực có tỷ trọng cao nhất là **Europe: 38%** và **Northern America: 18%** [wef-grr-2024:p101:image]. Trong Figure 1.5, hai nhóm bên liên quan có cỡ mẫu nhỏ nhất là **international organizations: n=127 (9% of total)** và **civil society: n=152 (10% of total)** [wef-grr-2024:p015:image].",
+      "citations": [
+        "wef-grr-2024:p101:image",
+        "wef-grr-2024:p015:image"
+      ],
+      "search_calls": 4,
+      "inspect_calls": 2,
+      "inspected_pages": [
+        15,
+        101
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p101:text:02",
+        "wef-grr-2024:p101:visual:01",
+        "wef-grr-2024:p101:text:01",
+        "wef-grr-2024:p100:visual:01",
+        "wef-grr-2024:p100:text:01",
+        "wef-grr-2024:p100:text:04",
+        "wef-grr-2024:p015:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table B.1 Survey sample composition regional respondents percentages Figure 1.5 Severity by stakeholder sample size n stakeholder groups",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1166.61,
+          "retrieval_ms": 605.22,
+          "returned_ids": [
+            "wef-grr-2024:p101:visual:01",
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p101:text:01",
+            "wef-grr-2024:p101:text:02",
+            "wef-grr-2024:p039:visual:01",
+            "wef-grr-2024:p015:visual:01"
+          ],
+          "pages": [
+            101,
+            15,
+            101,
+            101,
+            39,
+            15
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "Figure 1.5 Severity by stakeholder sample size n civil society international organizations academia government private sector",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1969.83,
+          "retrieval_ms": 9.7,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p015:visual:01",
+            "wef-grr-2024:p101:text:01",
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p101:visual:01",
+            "wef-grr-2024:p039:visual:01"
+          ],
+          "pages": [
+            15,
+            15,
+            101,
+            15,
+            101,
+            39
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Table B.1 region Europe 38% Northern America 18% Figure 1.5 stakeholder n percentage",
+          "modality": null,
+          "page_range": [
+            14,
+            16
+          ],
+          "llm_ms": 1969.83,
+          "retrieval_ms": 415.54,
+          "returned_ids": [
+            "wef-grr-2024:p015:text:04",
+            "wef-grr-2024:p015:visual:01",
+            "wef-grr-2024:p016:visual:01",
+            "wef-grr-2024:p015:text:03",
+            "wef-grr-2024:p014:text:03",
+            "wef-grr-2024:p016:text:03"
+          ],
+          "pages": [
+            15,
+            15,
+            16,
+            15,
+            14,
+            16
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Survey sample composition Region Europe Northern America Figure 1.5 severity stakeholder",
+          "modality": null,
+          "page_range": [
+            100,
+            102
+          ],
+          "llm_ms": 1969.83,
+          "retrieval_ms": 409.52,
+          "returned_ids": [
+            "wef-grr-2024:p101:text:02",
+            "wef-grr-2024:p101:visual:01",
+            "wef-grr-2024:p101:text:01",
+            "wef-grr-2024:p100:visual:01",
+            "wef-grr-2024:p100:text:01",
+            "wef-grr-2024:p100:text:04"
+          ],
+          "pages": [
+            101,
+            101,
+            101,
+            100,
+            100,
+            100
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 15,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p015.png",
+          "citation_id": "wef-grr-2024:p015:image",
+          "llm_ms": 1260.75
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 101,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p101.png",
+          "citation_id": "wef-grr-2024:p101:image",
+          "llm_ms": 1390.77
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p101:image",
+            "wef-grr-2024:p015:image"
+          ],
+          "llm_ms": 2116.67
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 5,
+      "llm_prompt_tokens": 44728,
+      "llm_completion_tokens": 379,
+      "embedding_tokens": 63,
+      "cost_usd": 0.00466356,
+      "latency_ms": 9353.53,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        101,
+        15
+      ],
+      "gold_answer": "Trong Table B.1, hai khu vực chiếm tỷ trọng cao nhất là Europe (38%) và Northern America (18%). Trong Figure 1.5, hai nhóm bên liên quan có cỡ mẫu nhỏ nhất là International organisations (n=127, 9%) và Civil society (n=152, 10%)."
+    },
+    {
+      "query_id": "test-mh-03",
+      "question": "Kết hợp Box 2.2 (Collapse of the AMOC) và bản đồ Figure 2.5 (Examples of global and regional tipping points): theo Box 2.2, ngưỡng nhiệt độ nào khiến sự sụp đổ của AMOC được đánh giá là 'possible' và ngưỡng nào là 'likely', đồng thời trên bản đồ Figure 2.5, AMOC nằm trong nhóm phân loại màu gì (Category) và hai điểm bùng phát lân cận phía bắc/tây bắc của AMOC cũng ghi nhãn 'Collapse' là gì?",
+      "status": "answered",
+      "answer": "Theo Box 2.2, ngưỡng tipping point của AMOC được đánh giá là “possible” ở 1.4°C và “likely” ở 4.0°C [wef-grr-2024:p044:image]. Trên Figure 2.5, AMOC thuộc Category “Circulation patterns” (màu xanh nhạt/xanh lam nhạt trong chú giải) [wef-grr-2024:p043:image]. Hai điểm bùng phát lân cận phía bắc/tây bắc AMOC có nhãn “Collapse” là Labrador sea/subpolar gyre và Boreal permafrost [wef-grr-2024:p043:image].",
+      "citations": [
+        "wef-grr-2024:p044:image",
+        "wef-grr-2024:p043:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 2,
+      "inspected_pages": [
+        43,
+        44
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p043:visual:01",
+        "wef-grr-2024:p044:text:01",
+        "wef-grr-2024:p043:text:01",
+        "wef-grr-2024:p044:visual:01",
+        "wef-grr-2024:p043:text:05",
+        "wef-grr-2024:p077:text:06"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Box 2.2 Collapse of the AMOC possible likely temperature threshold Figure 2.5 Examples of global and regional tipping points AMOC Collapse",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1444.36,
+          "retrieval_ms": 407.8,
+          "returned_ids": [
+            "wef-grr-2024:p043:visual:01",
+            "wef-grr-2024:p044:text:01",
+            "wef-grr-2024:p043:text:01",
+            "wef-grr-2024:p044:visual:01",
+            "wef-grr-2024:p043:text:05",
+            "wef-grr-2024:p077:text:06"
+          ],
+          "pages": [
+            43,
+            44,
+            43,
+            44,
+            43,
+            77
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 43,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p043.png",
+          "citation_id": "wef-grr-2024:p043:image",
+          "llm_ms": 1305.05
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 44,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p044.png",
+          "citation_id": "wef-grr-2024:p044:image",
+          "llm_ms": 1305.05
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p044:image",
+            "wef-grr-2024:p043:image"
+          ],
+          "llm_ms": 2634.61
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 11618,
+      "llm_completion_tokens": 293,
+      "embedding_tokens": 29,
+      "cost_usd": 0.00130888,
+      "latency_ms": 5797.41,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        44,
+        43
+      ],
+      "gold_answer": "Theo Box 2.2, điểm bùng phát của AMOC được đánh giá là 'possible' ở 1.4°C và 'likely' ở 4.0°C. Trên bản đồ Figure 2.5, AMOC thuộc nhóm màu xanh dương nhạt 'Circulation patterns', và hai điểm ghi nhãn 'Collapse' ngay phía bắc/tây bắc của AMOC là 'Labrador sea/subpolar gyre' và 'Greenland ice sheet'."
+    },
+    {
+      "query_id": "test-mh-04",
+      "question": "Kết hợp Figure D.1 (Top global risks addressed by Financial instruments) và bảng xếp hạng 34 rủi ro Figure E: trong 4 rủi ro Kinh tế (màu xanh dương) đứng đầu của Figure D.1 (Debt, Inflation, Economic downturn, Asset bubble bursts), rủi ro nào giữ thứ hạng cao nhất trong dài hạn 10 năm (Long term) trên Figure E và đứng hạng mấy?",
+      "status": "answered",
+      "answer": "Trong bốn rủi ro kinh tế được nêu ở Figure D.1, **Debt** giữ thứ hạng cao nhất trong dài hạn: đứng **hạng 17** trên Figure E. Các rủi ro còn lại đứng thấp hơn: Economic downturn hạng 28, Asset bubble bursts hạng 30 và Inflation hạng 32. [wef-grr-2024:p112:image] [wef-grr-2024:p011:image]",
+      "citations": [
+        "wef-grr-2024:p112:image",
+        "wef-grr-2024:p011:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 2,
+      "inspected_pages": [
+        11,
+        112
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p112:text:01",
+        "wef-grr-2024:p112:visual:01",
+        "wef-grr-2024:p112:text:02",
+        "wef-grr-2024:p014:text:03",
+        "wef-grr-2024:p011:visual:01",
+        "wef-grr-2024:p089:visual:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure D.1 Top global risks addressed by Financial instruments Debt Inflation Economic downturn Asset bubble bursts; Figure E 34 risks Long term ranking",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1490.5,
+          "retrieval_ms": 410.23,
+          "returned_ids": [
+            "wef-grr-2024:p112:text:01",
+            "wef-grr-2024:p112:visual:01",
+            "wef-grr-2024:p112:text:02",
+            "wef-grr-2024:p014:text:03",
+            "wef-grr-2024:p011:visual:01",
+            "wef-grr-2024:p089:visual:01"
+          ],
+          "pages": [
+            112,
+            112,
+            112,
+            14,
+            11,
+            89
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 11,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p011.png",
+          "citation_id": "wef-grr-2024:p011:image",
+          "llm_ms": 1275.49
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 112,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p112.png",
+          "citation_id": "wef-grr-2024:p112:image",
+          "llm_ms": 1275.49
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p112:image",
+            "wef-grr-2024:p011:image"
+          ],
+          "llm_ms": 2197.85
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 12963,
+      "llm_completion_tokens": 245,
+      "embedding_tokens": 28,
+      "cost_usd": 0.00141936,
+      "latency_ms": 5377.69,
+      "category": "Multi-hop",
+      "answerable": true,
+      "evidence_pages": [
+        112,
+        11
+      ],
+      "gold_answer": "Bốn rủi ro Kinh tế đứng đầu Figure D.1 là Debt (79%), Inflation (70%), Economic downturn (69%) và Asset bubble bursts (69%). Trong bảng Long term (10 years) của Figure E, Debt đứng hạng 17th — cao hơn hẳn Economic downturn (28th), Asset bubble bursts (30th) và Inflation (32nd)."
+    },
+    {
+      "query_id": "test-txt-01",
+      "question": "Theo mục 1.3 (False information), vì sao AI tạo sinh lại làm bùng nổ rủi ro thông tin sai lệch ('synthetic' content) trong 2 năm tới, và báo cáo nêu ví dụ quy định nào của Trung Quốc nhằm giúp nhận diện nội dung do AI tạo ra?",
+      "status": "answered",
+      "answer": "AI tạo sinh làm rủi ro bùng nổ vì các giao diện dễ dùng cho những mô hình AI quy mô lớn đã khiến việc tạo thông tin giả không còn đòi hỏi kỹ năng chuyên biệt; chúng cho phép tạo nội dung “synthetic” từ giả giọng nói tinh vi đến website giả mạo. Trong hai năm tới, nhiều tác nhân có thể tận dụng sự bùng nổ nội dung này để thao túng cá nhân, gây thiệt hại kinh tế và chia rẽ xã hội; thông tin giả có thể phục vụ nhiều mục tiêu, từ hoạt động khí hậu đến leo thang xung đột. [wef-grr-2024:p018:image] Ví dụ quy định Trung Quốc được nêu là yêu cầu gắn watermark vào nội dung do AI tạo ra, nhằm giúp nhận diện thông tin sai lệch, kể cả thông tin sai vô ý do AI “hallucinate”. [wef-grr-2024:p018:image]",
+      "citations": [
+        "wef-grr-2024:p018:image"
+      ],
+      "search_calls": 2,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        18
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p018:text:04",
+        "wef-grr-2024:p019:text:03",
+        "wef-grr-2024:p019:text:05",
+        "wef-grr-2024:p018:text:05",
+        "wef-grr-2024:p018:text:01",
+        "wef-grr-2024:p033:text:06",
+        "wef-grr-2024:p050:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "section 1.3 False information generative AI synthetic content two years China regulation identify AI-generated content",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1336.78,
+          "retrieval_ms": 406.32,
+          "returned_ids": [
+            "wef-grr-2024:p018:text:04",
+            "wef-grr-2024:p019:text:03",
+            "wef-grr-2024:p018:text:05",
+            "wef-grr-2024:p019:text:05",
+            "wef-grr-2024:p033:text:06",
+            "wef-grr-2024:p050:text:01"
+          ],
+          "pages": [
+            18,
+            19,
+            18,
+            19,
+            33,
+            50
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "China requirements watermark AI-generated content regulation deep synthesis provisions effective 2023 identify content",
+          "modality": null,
+          "page_range": [
+            17,
+            19
+          ],
+          "llm_ms": 1554.04,
+          "retrieval_ms": 7.76,
+          "returned_ids": [
+            "wef-grr-2024:p018:text:04",
+            "wef-grr-2024:p019:text:03",
+            "wef-grr-2024:p019:text:05",
+            "wef-grr-2024:p018:text:05",
+            "wef-grr-2024:p018:text:01"
+          ],
+          "pages": [
+            18,
+            19,
+            19,
+            18,
+            18
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 18,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p018.png",
+          "citation_id": "wef-grr-2024:p018:image",
+          "llm_ms": 1171.09
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p018:image"
+          ],
+          "llm_ms": 3251.14
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 13388,
+      "llm_completion_tokens": 345,
+      "embedding_tokens": 20,
+      "cost_usd": 0.0015117,
+      "latency_ms": 7732.84,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        18
+      ],
+      "gold_answer": "Các giao diện dễ sử dụng của mô hình AI quy mô lớn không còn đòi hỏi kỹ năng chuyên sâu đã tạo ra sự bùng nổ thông tin giả mạo và 'nội dung tổng hợp' (synthetic content) như nhân bản giọng nói (voice cloning) và trang web giả mạo. Báo cáo dẫn ví dụ Trung Quốc yêu cầu gắn watermark cho nội dung do AI tạo ra (watermark AI-generated content) để giúp phát hiện thông tin sai lệch hoặc ảo giác AI."
+    },
+    {
+      "query_id": "test-txt-02",
+      "question": "Theo đoạn văn phân tích đi kèm Figure 1.16 (National risk perceptions: Economic downturn), rủi ro 'Economic downturn' xuất hiện trong Top 5 rủi ro hàng đầu tại bao nhiêu quốc gia và chiếm bao nhiêu phần trăm số quốc gia được khảo sát trong EOS?",
+      "status": "answered",
+      "answer": "Theo đoạn phân tích đi kèm Figure 1.16, “Economic downturn” xuất hiện trong Top 5 tại **102 quốc gia**, tương đương **90%** số quốc gia được khảo sát trong EOS. [wef-grr-2024:p028:image]",
+      "citations": [
+        "wef-grr-2024:p028:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        28
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p028:visual:01",
+        "wef-grr-2024:p028:text:02",
+        "wef-grr-2024:p028:text:01",
+        "wef-grr-2024:p103:table:01",
+        "wef-grr-2024:p014:text:03",
+        "wef-grr-2024:p024:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Figure 1.16 National risk perceptions Economic downturn Top 5 countries percentage surveyed EOS accompanying analysis",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1341.79,
+          "retrieval_ms": 434.8,
+          "returned_ids": [
+            "wef-grr-2024:p028:visual:01",
+            "wef-grr-2024:p028:text:02",
+            "wef-grr-2024:p028:text:01",
+            "wef-grr-2024:p103:table:01",
+            "wef-grr-2024:p014:text:03",
+            "wef-grr-2024:p024:text:03"
+          ],
+          "pages": [
+            28,
+            28,
+            28,
+            103,
+            14,
+            24
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 28,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p028.png",
+          "citation_id": "wef-grr-2024:p028:image",
+          "llm_ms": 1099.61
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p028:image"
+          ],
+          "llm_ms": 2028.01
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 8667,
+      "llm_completion_tokens": 150,
+      "embedding_tokens": 19,
+      "cost_usd": 0.00094208,
+      "latency_ms": 4917.7,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        28
+      ],
+      "gold_answer": "Rủi ro Economic downturn xuất hiện trong nhóm 5 rủi ro hàng đầu tại 102 quốc gia, chiếm 90% số quốc gia được khảo sát trong EOS."
+    },
+    {
+      "query_id": "test-txt-03",
+      "question": "Theo mục 'High-stakes hotspots' trong báo cáo, ba điểm nóng địa chính trị cụ thể nào sẽ thu hút sự chú ý và nguồn lực trong hai năm tới?",
+      "status": "answered",
+      "answer": "Ba điểm nóng địa chính trị được nêu là **chiến tranh Nga–Ukraine, xung đột Trung Đông và căng thẳng quanh Đài Loan**. [wef-grr-2024:p010:text:02]",
+      "citations": [
+        "wef-grr-2024:p010:text:02"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p024:text:06",
+        "wef-grr-2024:p010:text:02",
+        "wef-grr-2024:p024:text:05",
+        "wef-grr-2024:p022:text:02",
+        "wef-grr-2024:p026:text:01",
+        "wef-grr-2024:p023:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "\"High-stakes hotspots\" three geopolitical hotspots attention resources next two years",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1181.39,
+          "retrieval_ms": 418.35,
+          "returned_ids": [
+            "wef-grr-2024:p024:text:06",
+            "wef-grr-2024:p010:text:02",
+            "wef-grr-2024:p024:text:05",
+            "wef-grr-2024:p022:text:02",
+            "wef-grr-2024:p026:text:01",
+            "wef-grr-2024:p023:text:01"
+          ],
+          "pages": [
+            24,
+            10,
+            24,
+            22,
+            26,
+            23
+          ]
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p010:text:02"
+          ],
+          "llm_ms": 1546.21
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 2,
+      "llm_prompt_tokens": 2883,
+      "llm_completion_tokens": 117,
+      "embedding_tokens": 16,
+      "cost_usd": 0.00034712,
+      "latency_ms": 3146.24,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        23
+      ],
+      "gold_answer": "Ba điểm nóng cụ thể là: chiến tranh tại Ukraine (the war in Ukraine), xung đột Israel-Gaza (the Israel-Gaza conflict) và căng thẳng quanh Đài Loan (tensions over Taiwan)."
+    },
+    {
+      "query_id": "test-txt-04",
+      "question": "Theo phần 'Definitions' đầu Appendix A, báo cáo định nghĩa hai thuật ngữ 'Global risk' và 'Under-the-radar risk' như thế nào?",
+      "status": "answered",
+      "answer": "Theo phần “Definitions” ở đầu Appendix A, **“Global risk”** là khả năng xảy ra một sự kiện hoặc điều kiện mà nếu xảy ra sẽ gây tác động tiêu cực đến một phần đáng kể của GDP toàn cầu, dân số hoặc tài nguyên thiên nhiên. [wef-grr-2024:p095:image]\n\n**“Under-the-radar risk”** là một rủi ro toàn cầu mà thông tin tình báo mới, sự suy giảm rõ rệt, một thời điểm quyết định then chốt hoặc dấu hiệu tương tự cho thấy mức độ nghiêm trọng của rủi ro (khả năng xảy ra hoặc tác động) đang tăng lên và/hoặc cao hơn mức được phản ánh trong nhận thức về rủi ro toàn cầu. [wef-grr-2024:p095:image]",
+      "citations": [
+        "wef-grr-2024:p095:image"
+      ],
+      "search_calls": 1,
+      "inspect_calls": 1,
+      "inspected_pages": [
+        95
+      ],
+      "final_context_ids": [
+        "wef-grr-2024:p095:text:02",
+        "wef-grr-2024:p003:text:02",
+        "wef-grr-2024:p005:text:02",
+        "wef-grr-2024:p095:text:01",
+        "wef-grr-2024:p068:text:06",
+        "wef-grr-2024:p003:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Appendix A Definitions “Global risk” “Under-the-radar risk”",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1428.32,
+          "retrieval_ms": 392.53,
+          "returned_ids": [
+            "wef-grr-2024:p095:text:02",
+            "wef-grr-2024:p003:text:02",
+            "wef-grr-2024:p005:text:02",
+            "wef-grr-2024:p095:text:01",
+            "wef-grr-2024:p068:text:06",
+            "wef-grr-2024:p003:text:01"
+          ],
+          "pages": [
+            95,
+            3,
+            5,
+            95,
+            68,
+            3
+          ]
+        },
+        {
+          "event": "inspect_page_image",
+          "page": 95,
+          "focus": "full",
+          "image_path": "data/advanced/index/pages/p095.png",
+          "citation_id": "wef-grr-2024:p095:image",
+          "llm_ms": 1169.7
+        },
+        {
+          "event": "answer",
+          "citations": [
+            "wef-grr-2024:p095:image"
+          ],
+          "llm_ms": 2652.58
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 7831,
+      "llm_completion_tokens": 260,
+      "embedding_tokens": 15,
+      "cost_usd": 0.0009134,
+      "latency_ms": 5648.48,
+      "category": "Text",
+      "answerable": true,
+      "evidence_pages": [
+        95
+      ],
+      "gold_answer": "'Global risk' là khả năng xảy ra một sự kiện hoặc điều kiện mà nếu xảy ra sẽ tác động tiêu cực đến một tỷ lệ đáng kể GDP, dân số hoặc tài nguyên thiên nhiên toàn cầu. 'Under-the-radar risk' là một rủi ro toàn cầu mà thông tin tình báo mới, dấu hiệu suy thoái rõ rệt hoặc điểm quyết định then chốt cho thấy mức độ nghiêm trọng (khả năng hoặc tác động) đang gia tăng và/hoặc cao hơn nhận thức rủi ro toàn cầu hiện tại."
+    },
+    {
+      "query_id": "test-una-01",
+      "question": "Theo WEF Global Risks Report 2024, mô hình ngôn ngữ GPT-4 đạt độ chính xác bao nhiêu phần trăm khi tham gia thử nghiệm đánh giá rủi ro kinh tế vĩ mô?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Không tìm thấy trong WEF Global Risks Report 2024 thông tin về thử nghiệm đánh giá rủi ro kinh tế vĩ mô có GPT-4 hoặc phần trăm độ chính xác của GPT-4. Đã kiểm tra bằng các tìm kiếm riêng biệt (hybrid và BM25) về GPT-4, độ chính xác và đánh giá/forecast rủi ro kinh tế; các kết quả liên quan không nêu chỉ số được hỏi. Vì vậy không thể xác nhận con số từ đúng báo cáo/ấn bản này.",
+      "citations": [],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p037:visual:01",
+        "wef-grr-2024:p057:text:02",
+        "wef-grr-2024:p050:text:02",
+        "wef-grr-2024:p080:text:02",
+        "wef-grr-2024:p014:text:05",
+        "wef-grr-2024:p116:text:03",
+        "wef-grr-2024:p069:text:01",
+        "wef-grr-2024:p017:text:04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "GPT-4 accuracy percentage macroeconomic risk assessment experiment",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1104.7,
+          "retrieval_ms": 385.57,
+          "returned_ids": [
+            "wef-grr-2024:p027:text:01",
+            "wef-grr-2024:p007:visual:01",
+            "wef-grr-2024:p035:text:08",
+            "wef-grr-2024:p014:text:05",
+            "wef-grr-2024:p063:text:01",
+            "wef-grr-2024:p035:text:04"
+          ],
+          "pages": [
+            27,
+            7,
+            35,
+            14,
+            63,
+            35
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "GPT-4 macroeconomic risk experiment accuracy",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1380.12,
+          "retrieval_ms": 3.09,
+          "returned_ids": [
+            "wef-grr-2024:p080:text:02",
+            "wef-grr-2024:p037:visual:01",
+            "wef-grr-2024:p069:text:01",
+            "wef-grr-2024:p017:text:04",
+            "wef-grr-2024:p003:text:01",
+            "wef-grr-2024:p069:visual:01"
+          ],
+          "pages": [
+            80,
+            37,
+            69,
+            17,
+            3,
+            69
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "large language model GPT-4 economic forecasting risk assessment percentage accuracy",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1380.12,
+          "retrieval_ms": 398.54,
+          "returned_ids": [
+            "wef-grr-2024:p037:visual:01",
+            "wef-grr-2024:p057:text:02",
+            "wef-grr-2024:p050:text:02",
+            "wef-grr-2024:p080:text:02",
+            "wef-grr-2024:p014:text:05",
+            "wef-grr-2024:p116:text:03"
+          ],
+          "pages": [
+            37,
+            57,
+            50,
+            80,
+            14,
+            116
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 2108.92,
+          "reason": "Không tìm thấy trong WEF Global Risks Report 2024 thông tin về thử nghiệm đánh giá rủi ro kinh tế vĩ mô có GPT-4 hoặc phần trăm độ chính xác của GPT-4. Đã kiểm tra bằng các tìm kiếm riêng biệt (hybrid và BM25) về GPT-4, độ chính xác và đánh giá/forecast rủi ro kinh tế; các kết quả liên quan không nêu chỉ số được hỏi. Vì vậy không thể xác nhận con số từ đúng báo cáo/ấn bản này."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 12021,
+      "llm_completion_tokens": 234,
+      "embedding_tokens": 24,
+      "cost_usd": 0.00131958,
+      "latency_ms": 5382.3,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (WEF Global Risks Report 2024 không đề cập GPT-4 hay thử nghiệm độ chính xác của mô hình này)."
+    },
+    {
+      "query_id": "test-una-02",
+      "question": "Theo WEF Global Risks Report 2024, chuẩn Basel III quy định tỷ lệ an toàn vốn tối thiểu (CAR) đối với các ngân hàng toàn cầu là bao nhiêu phần trăm?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Sau ba lượt tìm kiếm khác nhau trong WEF Global Risks Report 2024, không tìm thấy nội dung nêu tỷ lệ CAR tối thiểu theo Basel III. Báo cáo chỉ nhắc Basel như ví dụ về minilateral treaties and agreements, không cung cấp tỷ lệ phần trăm CAR. Vì vậy không thể xác nhận con số được hỏi từ đúng tài liệu này.",
+      "citations": [],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p086:text:03",
+        "wef-grr-2024:p067:text:02",
+        "wef-grr-2024:p112:text:01",
+        "wef-grr-2024:p112:visual:01",
+        "wef-grr-2024:p112:text:02",
+        "wef-grr-2024:p089:visual:01",
+        "wef-grr-2024:p078:text:01",
+        "wef-grr-2024:p061:text:04",
+        "wef-grr-2024:p049:text:03",
+        "wef-grr-2024:p100:text:05"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "Basel III minimum capital adequacy ratio CAR global banks percentage",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1230.83,
+          "retrieval_ms": 452.52,
+          "returned_ids": [
+            "wef-grr-2024:p082:text:02",
+            "wef-grr-2024:p049:text:03",
+            "wef-grr-2024:p100:text:07",
+            "wef-grr-2024:p086:text:03",
+            "wef-grr-2024:p053:text:03",
+            "wef-grr-2024:p112:text:02"
+          ],
+          "pages": [
+            82,
+            49,
+            100,
+            86,
+            53,
+            112
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "\"Basel III\" capital adequacy ratio minimum 8%",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1358.39,
+          "retrieval_ms": 5.15,
+          "returned_ids": [
+            "wef-grr-2024:p078:text:01",
+            "wef-grr-2024:p061:text:04",
+            "wef-grr-2024:p049:text:03",
+            "wef-grr-2024:p100:text:05",
+            "wef-grr-2024:p082:text:02",
+            "wef-grr-2024:p113:text:01"
+          ],
+          "pages": [
+            78,
+            61,
+            49,
+            100,
+            82,
+            113
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "Basel capital ratio bank capital requirements CAR percentage",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1404.76,
+          "retrieval_ms": 662.68,
+          "returned_ids": [
+            "wef-grr-2024:p086:text:03",
+            "wef-grr-2024:p067:text:02",
+            "wef-grr-2024:p112:text:01",
+            "wef-grr-2024:p112:visual:01",
+            "wef-grr-2024:p112:text:02",
+            "wef-grr-2024:p089:visual:01"
+          ],
+          "pages": [
+            86,
+            67,
+            112,
+            112,
+            112,
+            89
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1727.97,
+          "reason": "Sau ba lượt tìm kiếm khác nhau trong WEF Global Risks Report 2024, không tìm thấy nội dung nêu tỷ lệ CAR tối thiểu theo Basel III. Báo cáo chỉ nhắc Basel như ví dụ về minilateral treaties and agreements, không cung cấp tỷ lệ phần trăm CAR. Vì vậy không thể xác nhận con số được hỏi từ đúng tài liệu này."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 15785,
+      "llm_completion_tokens": 190,
+      "embedding_tokens": 21,
+      "cost_usd": 0.00167392,
+      "latency_ms": 6843.77,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không nhắc đến Basel III hay tỷ lệ an toàn vốn CAR)."
+    },
+    {
+      "query_id": "test-una-03",
+      "question": "Theo WEF Global Risks Report 2024, Cơ chế điều chỉnh biên giới carbon của EU (CBAM - Carbon Border Adjustment Mechanism) chính thức thu phí khí thải đối với hàng nhập khẩu từ ngày nào?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Sau hai lượt tìm kiếm riêng biệt trong WEF Global Risks Report 2024, không tìm thấy nội dung nêu CBAM hoặc ngày bắt đầu thu phí khí thải đối với hàng nhập khẩu. Vì vậy không thể xác nhận ngày được hỏi từ đúng báo cáo/ấn bản này.",
+      "citations": [],
+      "search_calls": 2,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p003:text:01",
+        "wef-grr-2024:p083:text:02",
+        "wef-grr-2024:p090:text:05",
+        "wef-grr-2024:p035:text:06",
+        "wef-grr-2024:p048:text:05",
+        "wef-grr-2024:p079:text:05",
+        "wef-grr-2024:p079:text:04",
+        "wef-grr-2024:p080:text:03",
+        "wef-grr-2024:p094:text:04",
+        "wef-grr-2024:p048:text:06"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "EU Carbon Border Adjustment Mechanism CBAM starts charging fees imports date",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1370.81,
+          "retrieval_ms": 433.33,
+          "returned_ids": [
+            "wef-grr-2024:p048:text:05",
+            "wef-grr-2024:p079:text:05",
+            "wef-grr-2024:p079:text:04",
+            "wef-grr-2024:p080:text:03",
+            "wef-grr-2024:p094:text:04",
+            "wef-grr-2024:p048:text:06"
+          ],
+          "pages": [
+            48,
+            79,
+            79,
+            80,
+            94,
+            48
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "CBAM Carbon Border Adjustment Mechanism fee charge imports starts 2026 date",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1124.17,
+          "retrieval_ms": 3.85,
+          "returned_ids": [
+            "wef-grr-2024:p003:text:01",
+            "wef-grr-2024:p083:text:02",
+            "wef-grr-2024:p090:text:05",
+            "wef-grr-2024:p035:text:06",
+            "wef-grr-2024:p048:text:05",
+            "wef-grr-2024:p079:text:05"
+          ],
+          "pages": [
+            3,
+            83,
+            90,
+            35,
+            48,
+            79
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1602.93,
+          "reason": "Sau hai lượt tìm kiếm riêng biệt trong WEF Global Risks Report 2024, không tìm thấy nội dung nêu CBAM hoặc ngày bắt đầu thu phí khí thải đối với hàng nhập khẩu. Vì vậy không thể xác nhận ngày được hỏi từ đúng báo cáo/ấn bản này."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 8500,
+      "llm_completion_tokens": 146,
+      "embedding_tokens": 13,
+      "cost_usd": 0.00092326,
+      "latency_ms": 4536.22,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không đề cập CBAM hay Carbon Border Adjustment Mechanism)."
+    },
+    {
+      "query_id": "test-una-04",
+      "question": "Theo WEF Global Risks Report 2024, khung quản lý rủi ro AI của NIST (NIST AI RMF) và tiêu chuẩn ISO 42001 quy định những tiêu chí kiểm toán nào?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Câu hỏi yêu cầu các tiêu chí kiểm toán được quy định bởi NIST AI RMF và ISO 42001. Sau ba lượt tìm kiếm khác nhau trong WEF Global Risks Report 2024, báo cáo không nêu các tiêu chí kiểm toán của hai khuôn khổ/tiêu chuẩn này; nội dung tìm được chỉ bàn về quản trị AI nói chung, các cơ chế quản lý và quy định. Vì vậy không thể xác định tiêu chí đó từ đúng nguồn và ấn bản được yêu cầu.",
+      "citations": [],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p056:text:01",
+        "wef-grr-2024:p081:text:07",
+        "wef-grr-2024:p056:text:03",
+        "wef-grr-2024:p056:visual:01",
+        "wef-grr-2024:p056:text:04",
+        "wef-grr-2024:p086:text:02",
+        "wef-grr-2024:p094:text:04",
+        "wef-grr-2024:p055:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "NIST AI RMF ISO 42001 audit criteria",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1116.97,
+          "retrieval_ms": 446.51,
+          "returned_ids": [
+            "wef-grr-2024:p056:text:01",
+            "wef-grr-2024:p081:text:07",
+            "wef-grr-2024:p056:text:04",
+            "wef-grr-2024:p050:text:03",
+            "wef-grr-2024:p051:text:01",
+            "wef-grr-2024:p034:text:02"
+          ],
+          "pages": [
+            56,
+            81,
+            56,
+            50,
+            51,
+            34
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "\"NIST AI RMF\" \"ISO 42001\"",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1177.41,
+          "retrieval_ms": 4.8,
+          "returned_ids": [
+            "wef-grr-2024:p056:text:03",
+            "wef-grr-2024:p081:text:07",
+            "wef-grr-2024:p094:text:04",
+            "wef-grr-2024:p055:text:03",
+            "wef-grr-2024:p050:text:03",
+            "wef-grr-2024:p081:text:05"
+          ],
+          "pages": [
+            56,
+            81,
+            94,
+            55,
+            50,
+            81
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "NIST framework ISO standard audit criteria AI governance",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1996.57,
+          "retrieval_ms": 540.31,
+          "returned_ids": [
+            "wef-grr-2024:p056:text:01",
+            "wef-grr-2024:p081:text:07",
+            "wef-grr-2024:p056:text:03",
+            "wef-grr-2024:p056:visual:01",
+            "wef-grr-2024:p056:text:04",
+            "wef-grr-2024:p086:text:02"
+          ],
+          "pages": [
+            56,
+            81,
+            56,
+            56,
+            56,
+            86
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 2232.19,
+          "reason": "Câu hỏi yêu cầu các tiêu chí kiểm toán được quy định bởi NIST AI RMF và ISO 42001. Sau ba lượt tìm kiếm khác nhau trong WEF Global Risks Report 2024, báo cáo không nêu các tiêu chí kiểm toán của hai khuôn khổ/tiêu chuẩn này; nội dung tìm được chỉ bàn về quản trị AI nói chung, các cơ chế quản lý và quy định. Vì vậy không thể xác định tiêu chí đó từ đúng nguồn và ấn bản được yêu cầu."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 4,
+      "llm_prompt_tokens": 16589,
+      "llm_completion_tokens": 218,
+      "embedding_tokens": 20,
+      "cost_usd": 0.0017683,
+      "latency_ms": 7516.35,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không đề cập NIST AI RMF hay ISO 42001)."
+    },
+    {
+      "query_id": "test-una-05",
+      "question": "Theo WEF Global Risks Report 2024, báo cáo IMF World Economic Outlook dự báo tăng trưởng GDP toàn cầu năm 2026 (GDP growth forecast 2026) là bao nhiêu phần trăm?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Sau hai lượt tìm kiếm riêng biệt trong WEF Global Risks Report 2024, không tìm thấy dự báo IMF World Economic Outlook về tăng trưởng GDP toàn cầu năm 2026. Báo cáo không cung cấp con số được hỏi, nên không thể xác nhận phần trăm từ nguồn này.",
+      "citations": [],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p036:text:02",
+        "wef-grr-2024:p028:text:02",
+        "wef-grr-2024:p063:text:03",
+        "wef-grr-2024:p027:text:03",
+        "wef-grr-2024:p035:text:08",
+        "wef-grr-2024:p035:text:09",
+        "wef-grr-2024:p012:text:01",
+        "wef-grr-2024:p036:text:04",
+        "wef-grr-2024:p014:text:01",
+        "wef-grr-2024:p095:text:03"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "IMF World Economic Outlook GDP growth forecast 2026 global GDP growth 2026",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1572.78,
+          "retrieval_ms": 407.72,
+          "returned_ids": [
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p035:text:09",
+            "wef-grr-2024:p028:text:02",
+            "wef-grr-2024:p027:text:01",
+            "wef-grr-2024:p030:text:02",
+            "wef-grr-2024:p035:text:07"
+          ],
+          "pages": [
+            36,
+            35,
+            28,
+            27,
+            30,
+            35
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "2026 GDP growth forecast IMF World Economic Outlook global growth forecast 2026",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1474.54,
+          "retrieval_ms": 4.67,
+          "returned_ids": [
+            "wef-grr-2024:p035:text:09",
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p012:text:01",
+            "wef-grr-2024:p036:text:04",
+            "wef-grr-2024:p014:text:01",
+            "wef-grr-2024:p095:text:03"
+          ],
+          "pages": [
+            35,
+            36,
+            12,
+            36,
+            14,
+            95
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "dense",
+          "query": "IMF WEO 2026 global GDP growth percentage forecast",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1474.54,
+          "retrieval_ms": 388.96,
+          "returned_ids": [
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p028:text:02",
+            "wef-grr-2024:p063:text:03",
+            "wef-grr-2024:p027:text:03",
+            "wef-grr-2024:p035:text:08",
+            "wef-grr-2024:p035:text:09"
+          ],
+          "pages": [
+            36,
+            28,
+            63,
+            27,
+            35,
+            35
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1514.76,
+          "reason": "Sau hai lượt tìm kiếm riêng biệt trong WEF Global Risks Report 2024, không tìm thấy dự báo IMF World Economic Outlook về tăng trưởng GDP toàn cầu năm 2026. Báo cáo không cung cấp con số được hỏi, nên không thể xác nhận phần trăm từ nguồn này."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 11453,
+      "llm_completion_tokens": 196,
+      "embedding_tokens": 29,
+      "cost_usd": 0.00124388,
+      "latency_ms": 5364.64,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không chứa số liệu dự báo tăng trưởng GDP năm 2026 của IMF World Economic Outlook)."
+    },
+    {
+      "query_id": "test-una-06",
+      "question": "Theo WEF Global Risks Report 2024, khối BRICS mở rộng đóng góp bao nhiêu phần trăm tổng GDP toàn cầu theo sức mua tương đương?",
+      "status": "abstain",
+      "answer": "Insufficient evidence in the provided report: Không tìm thấy trong WEF Global Risks Report 2024 con số về tỷ trọng GDP toàn cầu theo sức mua tương đương của khối BRICS mở rộng. Đã kiểm tra bằng các truy vấn riêng biệt về “expanded BRICS” và “BRICS ... GDP ... purchasing power parity”; kết quả không cung cấp số liệu được hỏi.",
+      "citations": [],
+      "search_calls": 3,
+      "inspect_calls": 0,
+      "inspected_pages": [],
+      "final_context_ids": [
+        "wef-grr-2024:p036:text:02",
+        "wef-grr-2024:p029:text:02",
+        "wef-grr-2024:p036:text:07",
+        "wef-grr-2024:p035:text:08",
+        "wef-grr-2024:p005:text:02",
+        "wef-grr-2024:p063:text:03",
+        "wef-grr-2024:p035:text:07",
+        "wef-grr-2024:p029:text:03",
+        "wef-grr-2024:p095:text:03",
+        "wef-grr-2024:p114:text:02",
+        "wef-grr-2024:p096:text:01"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "expanded BRICS share global GDP purchasing power parity percent",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 1106.21,
+          "retrieval_ms": 665.71,
+          "returned_ids": [
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p029:text:02",
+            "wef-grr-2024:p114:text:02",
+            "wef-grr-2024:p086:text:03",
+            "wef-grr-2024:p035:text:07",
+            "wef-grr-2024:p035:text:08"
+          ],
+          "pages": [
+            36,
+            29,
+            114,
+            86,
+            35,
+            35
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "bm25",
+          "query": "BRICS expanded GDP global purchasing power parity 2023 share",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 2009.89,
+          "retrieval_ms": 5.21,
+          "returned_ids": [
+            "wef-grr-2024:p035:text:07",
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p029:text:03",
+            "wef-grr-2024:p095:text:03",
+            "wef-grr-2024:p114:text:02",
+            "wef-grr-2024:p096:text:01"
+          ],
+          "pages": [
+            35,
+            36,
+            29,
+            95,
+            114,
+            96
+          ]
+        },
+        {
+          "event": "search",
+          "mode": "hybrid",
+          "query": "BRICS countries account for percent world GDP PPP expansion",
+          "modality": null,
+          "page_range": [
+            null,
+            null
+          ],
+          "llm_ms": 2009.89,
+          "retrieval_ms": 349.48,
+          "returned_ids": [
+            "wef-grr-2024:p036:text:02",
+            "wef-grr-2024:p029:text:02",
+            "wef-grr-2024:p036:text:07",
+            "wef-grr-2024:p035:text:08",
+            "wef-grr-2024:p005:text:02",
+            "wef-grr-2024:p063:text:03"
+          ],
+          "pages": [
+            36,
+            29,
+            36,
+            35,
+            5,
+            63
+          ]
+        },
+        {
+          "event": "abstain",
+          "llm_ms": 1612.16,
+          "reason": "Không tìm thấy trong WEF Global Risks Report 2024 con số về tỷ trọng GDP toàn cầu theo sức mua tương đương của khối BRICS mở rộng. Đã kiểm tra bằng các truy vấn riêng biệt về “expanded BRICS” và “BRICS ... GDP ... purchasing power parity”; kết quả không cung cấp số liệu được hỏi."
+        }
+      ],
+      "model": "gpt-6-luna",
+      "llm_calls": 3,
+      "llm_prompt_tokens": 11296,
+      "llm_completion_tokens": 196,
+      "embedding_tokens": 20,
+      "cost_usd": 0.001228,
+      "latency_ms": 5749.9,
+      "category": "Thiếu bằng chứng",
+      "answerable": false,
+      "evidence_pages": [],
+      "gold_answer": "Không đủ bằng chứng trong tài liệu (tài liệu không đề cập khối BRICS hay tỷ trọng GDP của khối này)."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "config_name": "cfg0_text_only_baseline",
+  "split": "dev",
+  "reviews": [
+    {"id": "dev-tbl-01", "verdict": "fail", "notes": "Abstained: text-only search missed Australia card in Table C.2 p.103."},
+    {"id": "dev-tbl-02", "verdict": "pass", "notes": "Correct: tied ranks alphabetically + Public debt & Unemployment on p.103."},
+    {"id": "dev-tbl-03", "verdict": "pass", "notes": "Correct: Environmental category + land/water/extraterrestrial examples on p.96."},
+    {"id": "dev-vis-01", "verdict": "fail", "notes": "Wrong right column in Box 2.1 p.40: answered Geostrategic shifts instead of Climate change."},
+    {"id": "dev-vis-02", "verdict": "pass", "notes": "Correct: Belgium & Netherlands, UAE, US, Bangladesh at +0.0m/+0.6m/+3.2m on p.47."},
+    {"id": "dev-vis-03", "verdict": "pass", "notes": "Correct: Labrador sea/subpolar gyre, AMOC, Sahel/West African monsoon on p.43."},
+    {"id": "dev-cht-01", "verdict": "pass", "notes": "Correct: Extreme weather 66%, AI misinformation 53%, Societal polarization 46% on p.13."},
+    {"id": "dev-cht-02", "verdict": "pass", "notes": "Correct: Infectious diseases 81%, Adverse outcomes of frontier technologies 58% on p.88."},
+    {"id": "dev-cht-03", "verdict": "pass", "notes": "Correct: US$21B, US$125B/yr, US$387B/yr, gap US$194-366B/yr on p.46."},
+    {"id": "dev-mh-01", "verdict": "fail", "notes": "Wrong Figure 1.5 p.15 ranks for Private sector: answered Inflation & Lack of economic opportunity instead of 1st Misinformation & 2nd Extreme weather."},
+    {"id": "dev-mh-02", "verdict": "pass", "notes": "Correct: 2nd 10y, avg 5.9/7, 4 systems at 1.5C on p.42."},
+    {"id": "dev-mh-03", "verdict": "pass", "notes": "Correct: Cyber insecurity & Technological power concentration on p.51 + Nvidia 95% on p.52."},
+    {"id": "dev-txt-01", "verdict": "pass", "notes": "Correct: ~1500 experts, Sept-Oct 2023 on p.5-6."},
+    {"id": "dev-txt-02", "verdict": "pass", "notes": "Correct: nearly 521,000 homes in Australia by 2030 on p.45."},
+    {"id": "dev-txt-03", "verdict": "pass", "notes": "Correct: $6.4B CCS 2023 + $1.2B DAC Texas and Louisiana on p.48."},
+    {"id": "dev-una-01", "verdict": "fail", "notes": "Hallucinated 2025 rank 1 using 2024 data instead of abstaining."},
+    {"id": "dev-una-02", "verdict": "pass", "notes": "Correctly abstained: Germany 2025 unemployment rate absent."},
+    {"id": "dev-una-03", "verdict": "pass", "notes": "Correctly abstained: Scope 3 emissions absent."}
+  ]
+}
