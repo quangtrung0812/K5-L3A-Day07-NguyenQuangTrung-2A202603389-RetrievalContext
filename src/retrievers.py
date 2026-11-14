@@ -242,7 +242,7 @@ class PgVectorDenseRetriever:
             finally:
                 conn.close()
             return
-        except ImportError:
+        except (ImportError, OSError):
             pass
 
         import pg8000.dbapi

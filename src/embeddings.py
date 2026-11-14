@@ -1,10 +1,11 @@
-"""Real OpenAI embedding adapter compatible with Day 6 pgvector index (no mock fallback)."""
+"""Real OpenAI embedding adapter compatible with Day 6 pgvector index (pure-Python HTTP, no mock fallback)."""
 from __future__ import annotations
 
+import json
 import time
 from typing import Protocol
-
-from openai import OpenAI
+import urllib.error
+import urllib.request
 
 MODEL_DIMENSIONS: dict[str, int] = {
     "text-embedding-3-small": 1536,
@@ -28,7 +29,7 @@ class QueryEmbedder(Protocol):
 
 
 class OpenAIQueryEmbedder:
-    """OpenAI query embedder with strict dimension checks and token/cost telemetry."""
+    """OpenAI query embedder via REST API with strict dimension checks and token/cost telemetry."""
 
     def __init__(self, api_key: str, model_name: str = "text-embedding-3-small") -> None:
         if not api_key or not api_key.strip():
@@ -43,7 +44,8 @@ class OpenAIQueryEmbedder:
         self.model_name = resolved_model
         self.dimensions = MODEL_DIMENSIONS[resolved_model]
         self.price_per_1m_usd = MODEL_PRICE_PER_1M_TOKENS_USD[resolved_model]
-        self._client = OpenAI(api_key=api_key.strip(), timeout=30.0, max_retries=2)
+        self._api_key = api_key.strip()
+        self._endpoint = "https://api.openai.com/v1/embeddings"
 
         self.total_prompt_tokens = 0
         self.total_api_calls = 0
@@ -58,19 +60,46 @@ class OpenAIQueryEmbedder:
         if not cleaned:
             raise ValueError("Query text must not be empty")
 
-        t0 = time.perf_counter()
-        response = self._client.embeddings.create(model=self.model_name, input=cleaned)
-        self.total_api_time_sec += time.perf_counter() - t0
-        self.total_api_calls += 1
-        if getattr(response, "usage", None) is not None:
-            self.total_prompt_tokens += int(
-                getattr(response.usage, "prompt_tokens", 0)
-                or getattr(response.usage, "total_tokens", 0)
+        payload = json.dumps({"model": self.model_name, "input": cleaned}).encode("utf-8")
+        last_err: Exception | None = None
+        for attempt in range(1, 4):
+            t0 = time.perf_counter()
+            req = urllib.request.Request(
+                self._endpoint,
+                data=payload,
+                headers={
+                    "Authorization": f"Bearer {self._api_key}",
+                    "Content-Type": "application/json",
+                },
+                method="POST",
             )
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    body = json.loads(resp.read().decode("utf-8"))
+                self.total_api_time_sec += time.perf_counter() - t0
+                self.total_api_calls += 1
+                usage = body.get("usage") or {}
+                self.total_prompt_tokens += int(
+                    usage.get("prompt_tokens", usage.get("total_tokens", 0))
+                )
+                vector = list(body["data"][0]["embedding"])
+                if len(vector) != self.dimensions:
+                    raise RuntimeError(
+                        f"Embedding dimension mismatch: expected {self.dimensions}, got {len(vector)}"
+                    )
+                return vector
+            except urllib.error.HTTPError as http_err:
+                err_text = http_err.read().decode("utf-8", errors="replace")
+                last_err = RuntimeError(f"OpenAI Embeddings HTTP {http_err.code}: {err_text}")
+                if http_err.code in (429, 500, 502, 503, 504) and attempt < 3:
+                    time.sleep(1.5 * attempt)
+                    continue
+                raise last_err from http_err
+            except Exception as exc:
+                last_err = exc
+                if attempt < 3:
+                    time.sleep(1.5 * attempt)
+                    continue
+                raise RuntimeError(f"OpenAI embedding request failed: {exc}") from exc
 
-        vector = list(response.data[0].embedding)
-        if len(vector) != self.dimensions:
-            raise RuntimeError(
-                f"Embedding dimension mismatch: expected {self.dimensions}, got {len(vector)}"
-            )
-        return vector
+        raise RuntimeError(f"OpenAI embedding failed after retries: {last_err}")
