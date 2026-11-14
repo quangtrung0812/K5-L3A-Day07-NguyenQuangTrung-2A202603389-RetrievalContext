@@ -1,10 +1,24 @@
 .venv/
+venv/
+env/
 __pycache__/
 *.pyc
+.pytest_cache/
 .env
 .env.*
 !.env.example
+*.local
+*.secret*
+*secrets*
+*.pem
+*.key
+*.p12
+credentials*.json
+token*.json
+*.log
 .codex-log/
+.DS_Store
+Thumbs.db
 
 # Local datasets and generated output; share permitted artifacts deliberately
 starter/data/
